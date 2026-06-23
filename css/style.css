@@ -1,0 +1,182 @@
+:root {
+  --bg: #f4f6f5;
+  --surface: #ffffff;
+  --primary: #0b6e4f;
+  --primary-dark: #095a40;
+  --text: #1f2a26;
+  --text-sub: #5d6b65;
+  --border: #e2e7e4;
+  --correct: #1e7e34;
+  --correct-bg: #e6f4ea;
+  --wrong: #c0392b;
+  --wrong-bg: #fbeae8;
+  --radius: 14px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-header {
+  background: var(--primary);
+  color: #fff;
+  padding: max(12px, env(safe-area-inset-top)) 16px 12px;
+  text-align: center;
+}
+.app-header h1 { margin: 0; font-size: 1.1rem; font-weight: 700; }
+.app-header small { display: block; font-size: 0.78rem; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+
+#app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+.view { animation: fade 0.18s ease; }
+.hidden { display: none !important; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+/* ホーム統計 */
+.stats-summary { display: flex; gap: 12px; }
+.stat { flex: 1; text-align: center; }
+.stat-value { display: block; font-size: 1.6rem; font-weight: 700; color: var(--primary); }
+.stat-label { font-size: 0.8rem; color: var(--text-sub); }
+
+.section-title { font-size: 0.95rem; color: var(--text-sub); margin: 8px 0 12px; }
+
+/* メニュー */
+.menu { display: grid; gap: 12px; }
+.menu-btn {
+  display: flex; flex-direction: column; align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s, border-color 0.12s;
+}
+.menu-btn:active { transform: scale(0.985); border-color: var(--primary); }
+.menu-title { font-size: 1.05rem; font-weight: 700; }
+.menu-desc { font-size: 0.82rem; color: var(--text-sub); margin-top: 2px; }
+
+.menu-secondary { margin-top: 18px; text-align: center; }
+.link-btn {
+  background: none; border: none; color: var(--primary);
+  font-size: 0.95rem; cursor: pointer; padding: 8px;
+}
+
+/* 出題バー */
+.quiz-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.icon-btn {
+  background: none; border: none; color: var(--primary);
+  font-size: 0.95rem; cursor: pointer; padding: 6px 2px;
+}
+.progress { font-size: 0.9rem; color: var(--text-sub); font-weight: 600; }
+
+/* 設問 */
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.badge {
+  font-size: 0.72rem; background: var(--primary); color: #fff;
+  padding: 2px 10px; border-radius: 999px; font-weight: 600;
+}
+.badge-tag { background: #eef2f0; color: var(--text-sub); }
+.badge-tag:empty { display: none; }
+
+.question-text { font-size: 1.05rem; font-weight: 600; margin: 4px 0 0; }
+
+.choices { list-style: none; margin: 18px 0 0; padding: 0; counter-reset: choice; }
+.choices li {
+  position: relative;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 13px 14px 13px 46px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.choices li::before {
+  counter-increment: choice;
+  content: counter(choice);
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #eef2f0; color: var(--text-sub);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700;
+}
+.choices li.selected { border-color: var(--primary); background: #f0f8f4; }
+.choices li.selected::before { background: var(--primary); color: #fff; }
+.choices li.correct { border-color: var(--correct); background: var(--correct-bg); }
+.choices li.correct::before { background: var(--correct); color: #fff; content: "✓"; }
+.choices li.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+.choices li.wrong::before { background: var(--wrong); color: #fff; content: "✕"; }
+.choices.locked li { cursor: default; }
+
+/* 結果 */
+.result-head {
+  text-align: center; font-size: 1.15rem; font-weight: 700;
+  padding: 10px; border-radius: 12px; margin-bottom: 14px;
+}
+.result-head.ok { color: var(--correct); background: var(--correct-bg); }
+.result-head.ng { color: var(--wrong); background: var(--wrong-bg); }
+.explanation h3 { margin: 0 0 8px; font-size: 0.95rem; color: var(--primary); }
+.explanation p { margin: 0; }
+.reference { margin-top: 12px !important; font-size: 0.82rem; color: var(--text-sub); }
+.reference:empty { display: none; }
+
+/* アクション */
+.quiz-actions { position: sticky; bottom: 0; padding: 8px 0 max(8px, env(safe-area-inset-bottom)); }
+.primary-btn {
+  width: 100%; background: var(--primary); color: #fff;
+  border: none; border-radius: 12px; padding: 15px;
+  font-size: 1.05rem; font-weight: 700; cursor: pointer;
+}
+.primary-btn:disabled { background: #b6c5bf; cursor: default; }
+.primary-btn:active:not(:disabled) { background: var(--primary-dark); }
+
+/* 統計 */
+.cat-row { margin-bottom: 16px; }
+.cat-row:last-child { margin-bottom: 0; }
+.cat-row .cat-head { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 6px; }
+.cat-row .cat-name { font-weight: 600; }
+.bar { height: 10px; background: #eef2f0; border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--primary); border-radius: 999px; transition: width 0.4s; }
+
+.danger-zone h3 { margin: 0 0 4px; font-size: 0.95rem; color: var(--wrong); }
+.note { font-size: 0.82rem; color: var(--text-sub); margin: 0 0 12px; }
+.danger-btn {
+  background: #fff; color: var(--wrong); border: 1.5px solid var(--wrong);
+  border-radius: 12px; padding: 12px 18px; font-weight: 700; cursor: pointer;
+}
+.danger-btn:active { background: var(--wrong-bg); }
+
+.app-footer {
+  max-width: 720px; margin: 0 auto; padding: 8px 16px 24px;
+  font-size: 0.72rem; color: var(--text-sub); text-align: center;
+}
+
+.empty-msg { text-align: center; color: var(--text-sub); padding: 32px 16px; }

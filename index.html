@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b6e4f" />
+  <title>第一種衛生管理者 法令 一問一答</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>第一種衛生管理者 <small>関係法令 一問一答</small></h1>
+  </header>
+
+  <main id="app">
+    <!-- ホーム -->
+    <section id="view-home" class="view">
+      <div class="card stats-summary">
+        <div class="stat">
+          <span class="stat-value" id="home-rate">--%</span>
+          <span class="stat-label">全体正答率</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="home-answered">0 / 0</span>
+          <span class="stat-label">回答済み</span>
+        </div>
+      </div>
+
+      <h2 class="section-title">出題モード</h2>
+      <div class="menu">
+        <button class="menu-btn" data-mode="all">
+          <span class="menu-title">全問出題</span>
+          <span class="menu-desc">法令全問からランダム出題</span>
+        </button>
+        <button class="menu-btn" data-mode="category" data-category="law_hazardous">
+          <span class="menu-title">有害業務に係るもの</span>
+          <span class="menu-desc" id="cnt-law_hazardous">-</span>
+        </button>
+        <button class="menu-btn" data-mode="category" data-category="law_general">
+          <span class="menu-title">有害業務以外のもの</span>
+          <span class="menu-desc" id="cnt-law_general">-</span>
+        </button>
+        <button class="menu-btn" data-mode="review">
+          <span class="menu-title">復習モード</span>
+          <span class="menu-desc">不正解・未回答のみ出題</span>
+        </button>
+      </div>
+
+      <div class="menu-secondary">
+        <button class="link-btn" id="to-stats">📊 学習状況</button>
+      </div>
+    </section>
+
+    <!-- 出題 -->
+    <section id="view-quiz" class="view hidden">
+      <div class="quiz-bar">
+        <button class="icon-btn" id="quiz-back">← 戻る</button>
+        <span class="progress" id="quiz-progress">1 / 1</span>
+      </div>
+
+      <div class="card question-card">
+        <div class="badges">
+          <span class="badge" id="q-category"></span>
+          <span class="badge badge-tag" id="q-tags"></span>
+        </div>
+        <p class="question-text" id="q-text"></p>
+        <ol class="choices" id="q-choices"></ol>
+      </div>
+
+      <div id="q-result" class="result hidden">
+        <div class="result-head" id="q-judge"></div>
+        <div class="card explanation">
+          <h3>解説</h3>
+          <p id="q-explanation"></p>
+          <p class="reference" id="q-reference"></p>
+        </div>
+      </div>
+
+      <div class="quiz-actions">
+        <button class="primary-btn hidden" id="q-submit" disabled>回答する</button>
+        <button class="primary-btn hidden" id="q-next">次の問題へ</button>
+      </div>
+    </section>
+
+    <!-- 統計 -->
+    <section id="view-stats" class="view hidden">
+      <div class="quiz-bar">
+        <button class="icon-btn" id="stats-back">← 戻る</button>
+        <span class="progress">学習状況</span>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">カテゴリ別正答率</h2>
+        <div id="stats-categories"></div>
+      </div>
+
+      <div class="card danger-zone">
+        <h3>進捗リセット</h3>
+        <p class="note">この端末に保存された回答履歴をすべて消去する。</p>
+        <button class="danger-btn" id="reset-progress">進捗をリセット</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>学習用アプリ。内容の正確性は保証しない。実際の法令・最新情報を必ず確認すること。</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
