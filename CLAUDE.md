@@ -22,5 +22,6 @@
 ## 問題データ
 
 - 問題は `data/questions.json` で管理する。スキーマは [README.md](README.md) に記載する。
+- `category` / `id` / `tags` の命名規則と全5科目への拡張方針は [docs/categories.md](docs/categories.md) に定める。新しい科目・カテゴリを追加するときはこれに従う。
 - 各問題の `id` は学習履歴（localStorage）と紐づくため、既存の `id` は変更しない。
 - 問題・解説は法令等を一次情報として作成したオリジナルとし、市販問題集の文面を転載しない。
