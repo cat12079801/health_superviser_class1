@@ -1,6 +1,6 @@
 # カテゴリ・科目の命名規則と設計
 
-本アプリの問題データ（`data/questions.json`）で用いる `category` / `id` / `tags` の命名規則を定める。
+本アプリの問題データ（`data/` 配下の科目別ファイル）で用いる `category` / `id` / `tags` の命名規則を定める。
 現在は関係法令の2区分のみを実装しているが、将来的に第一種衛生管理者試験の全5科目へ拡張することを見据えて設計する。実装済みの2区分との後方互換を保つ。
 
 ## 1. 試験の科目構成
@@ -60,10 +60,21 @@ phys-001      労働生理の1問目
 - [index.html](../index.html) のホーム画面に、新しいカテゴリの出題ボタンを追加する。科目数が増える場合は「科目 → カテゴリ」の2階層メニューへ再構成することを検討する。
 - 統計画面（カテゴリ別正答率）は `CATEGORY_LABEL` を反復して描画するため、`CATEGORY_LABEL` へ追加すれば自動的に集計・表示の対象となる。`summarize` も `category` 単位で動的に集計するため、追加のコード変更は不要である。
 
-## 6. データ分割の方針（将来）
+## 6. データ分割の方針
 
-- 当面は単一の `data/questions.json` で管理する。
-- 問題数が増えて単一ファイルが扱いづらくなった場合は、`data/law.json` / `data/hygiene.json` / `data/physiology.json` のように科目系統で分割し、読み込み時に結合する構成へ移行することを検討する。`id` が全体で一意であれば、分割しても学習履歴との整合は保たれる。
+- 問題データはカテゴリごとのファイルに分割して管理する。**1ファイル＝1カテゴリ**とし、ファイル名は `category` の値に一致させる（例: `data/law_hazardous.json`、`data/law_general.json`）。読み込むファイルは `data/index.json` のマニフェスト（`files` 配列）に列挙する。
+- 起動時に `loadQuestions` がマニフェストを読み、列挙された各ファイルを取得して結合する。新しいカテゴリを追加するときは、当該ファイルを作成し `data/index.json` に登録する。
+- データファイルは、そのカテゴリを実際に実装する PR（データ＋`CATEGORY_LABEL`＋ホームのボタン）で作成・登録する。未実装カテゴリの空ファイルは事前に作らない。UI 未対応のまま空ファイルだけ存在すると、問題を追加しても表示されず誤解を招くためである。
+- `id` は全ファイルを通して一意とする。これにより、分割しても学習履歴（`localStorage`）との整合は保たれる。
+- カテゴリ単位で分割することで、`category` と `id` 接頭辞とファイルが1対1に対応し、別カテゴリを並行して編集してもファイル単位の衝突が起きない。
+
+| `category` | ファイル |
+|------------|----------|
+| `law_hazardous` | `data/law_hazardous.json` |
+| `law_general` | `data/law_general.json` |
+| `hygiene_hazardous`（未実装） | `data/hygiene_hazardous.json` |
+| `hygiene_general`（未実装） | `data/hygiene_general.json` |
+| `physiology`（未実装） | `data/physiology.json` |
 
 ## 7. 模擬試験モードでの利用（将来）
 

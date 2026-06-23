@@ -8,12 +8,19 @@ export const CATEGORY_LABEL = {
 
 let cache = null;
 
+async function fetchJson(path) {
+  const res = await fetch(path, { cache: "no-cache" });
+  if (!res.ok) throw new Error(`データの読み込みに失敗しました: ${path} (${res.status})`);
+  return res.json();
+}
+
+// data/index.json のマニフェストに列挙された科目別ファイルを読み込み、結合して返す
 export async function loadQuestions() {
   if (cache) return cache;
-  const res = await fetch("data/questions.json", { cache: "no-cache" });
-  if (!res.ok) throw new Error(`問題データの読み込みに失敗しました (${res.status})`);
-  const data = await res.json();
-  cache = Array.isArray(data.questions) ? data.questions : [];
+  const manifest = await fetchJson("data/index.json");
+  const files = Array.isArray(manifest.files) ? manifest.files : [];
+  const datasets = await Promise.all(files.map((file) => fetchJson(`data/${file}`)));
+  cache = datasets.flatMap((d) => (Array.isArray(d.questions) ? d.questions : []));
   return cache;
 }
 
