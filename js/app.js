@@ -115,12 +115,36 @@ function submitAnswer() {
   judgeEl.className = "result-head " + (correct ? "ok" : "ng");
   $("#q-explanation").textContent = q.explanation || "";
   $("#q-reference").textContent = q.reference ? `根拠: ${q.reference}` : "";
+  renderColumns(q.columns);
 
   $("#q-result").classList.remove("hidden");
   $("#q-submit").classList.add("hidden");
   const next = $("#q-next");
   next.textContent = index + 1 < quizSet.length ? "次の問題へ" : "結果を見る";
   next.classList.remove("hidden");
+}
+
+// 解説下部の具体例コラム（任意個数。なければ何も表示しない）
+function renderColumns(columns) {
+  const el = $("#q-columns");
+  el.innerHTML = "";
+  if (!Array.isArray(columns) || columns.length === 0) return;
+  for (const col of columns) {
+    if (!col || (!col.title && !col.body)) continue;
+    const box = document.createElement("div");
+    box.className = "column";
+    if (col.title) {
+      const h = document.createElement("h4");
+      h.textContent = col.title;
+      box.appendChild(h);
+    }
+    if (col.body) {
+      const p = document.createElement("p");
+      p.textContent = col.body;
+      box.appendChild(p);
+    }
+    el.appendChild(box);
+  }
 }
 
 function nextQuestion() {
