@@ -56,6 +56,8 @@ python3 -m http.server 8000
 
 Claude に「`data/questions.json` に〇〇の問題を追加して」と依頼すれば、このスキーマに沿って追記できる。
 
+`category` / `id` / `tags` の命名規則と、未実装科目（労働衛生・労働生理）への拡張方針は [docs/categories.md](docs/categories.md) に定める。
+
 ## 免責
 
 本アプリは学習用であり、内容の正確性・最新性を保証しない。法令は改正される。
