@@ -57,7 +57,7 @@
 
 ### 5.1 問題データ（静的 JSON）
 
-`data/questions.json`（または分野別に分割）。
+科目系統ごとのファイル（`data/law.json` 等）に分割し、`data/index.json` のマニフェストに列挙する。各ファイルの構造は次のとおりとする。
 
 ```json
 {
@@ -121,9 +121,10 @@
 ├── js/
 │   ├── app.js        # 画面制御
 │   ├── store.js      # localStorage 読み書き
-│   └── quiz.js       # 出題ロジック・正誤判定
+│   └── quiz.js       # 出題ロジック・正誤判定・問題データ読み込み
 └── data/
-    └── questions.json
+    ├── index.json    # 読み込むファイルのマニフェスト
+    └── law.json      # 関係法令の問題
 ```
 
 ## 8. デプロイ先の比較（メリット・デメリット）
