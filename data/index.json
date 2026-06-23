@@ -1,4 +1,4 @@
 {
   "version": "1",
-  "files": ["law.json"]
+  "files": ["law_hazardous.json", "law_general.json"]
 }

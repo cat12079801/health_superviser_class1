@@ -62,10 +62,18 @@ phys-001      労働生理の1問目
 
 ## 6. データ分割の方針
 
-- 問題データは科目系統ごとのファイル（`data/law.json` / 将来の `data/hygiene.json` / `data/physiology.json`）に分割して管理する。読み込むファイルは `data/index.json` のマニフェスト（`files` 配列）に列挙する。
-- 起動時に `loadQuestions` がマニフェストを読み、列挙された各ファイルを取得して結合する。新しい科目を追加するときは、当該ファイルを作成し `data/index.json` に登録する。
+- 問題データはカテゴリごとのファイルに分割して管理する。**1ファイル＝1カテゴリ**とし、ファイル名は `category` の値に一致させる（例: `data/law_hazardous.json`、`data/law_general.json`）。読み込むファイルは `data/index.json` のマニフェスト（`files` 配列）に列挙する。
+- 起動時に `loadQuestions` がマニフェストを読み、列挙された各ファイルを取得して結合する。新しいカテゴリを追加するときは、当該ファイルを作成し `data/index.json` に登録する。
 - `id` は全ファイルを通して一意とする。これにより、分割しても学習履歴（`localStorage`）との整合は保たれる。
-- 関係法令は有害業務区分の両方（`law_hazardous` / `law_general`）を `data/law.json` にまとめる。区分は `category` で表現する。
+- カテゴリ単位で分割することで、`category` と `id` 接頭辞とファイルが1対1に対応し、別カテゴリを並行して編集してもファイル単位の衝突が起きない。
+
+| `category` | ファイル |
+|------------|----------|
+| `law_hazardous` | `data/law_hazardous.json` |
+| `law_general` | `data/law_general.json` |
+| `hygiene_hazardous`（未実装） | `data/hygiene_hazardous.json` |
+| `hygiene_general`（未実装） | `data/hygiene_general.json` |
+| `physiology`（未実装） | `data/physiology.json` |
 
 ## 7. 模擬試験モードでの利用（将来）
 

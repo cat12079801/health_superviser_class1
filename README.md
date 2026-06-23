@@ -28,15 +28,16 @@ python3 -m http.server 8000
 
 ## 問題の追加・更新
 
-問題は科目系統ごとのファイル（例: [`data/law.json`](data/law.json)）に分割して管理する。読み込むファイルは [`data/index.json`](data/index.json) のマニフェストに列挙する。各ファイルの `questions` 配列に1問1オブジェクトで追加する。
+問題はカテゴリごとのファイル（1ファイル＝1カテゴリ。ファイル名は `category` の値に一致させる）に分割して管理する。読み込むファイルは [`data/index.json`](data/index.json) のマニフェストに列挙する。各ファイルの `questions` 配列に1問1オブジェクトで追加する。
 
 ```
 data/
-├── index.json    # 読み込むファイルの一覧（マニフェスト）
-└── law.json      # 関係法令（law_hazardous / law_general）
+├── index.json             # 読み込むファイルの一覧（マニフェスト）
+├── law_hazardous.json     # 関係法令（有害業務に係るもの）
+└── law_general.json       # 関係法令（有害業務以外のもの）
 ```
 
-新しい科目（労働衛生・労働生理）を追加するときは、`data/hygiene.json` などのファイルを作成し、`data/index.json` の `files` に登録する。`id` は全ファイルを通して一意とする。
+新しいカテゴリ（労働衛生・労働生理）を追加するときは、`data/hygiene_hazardous.json` などのファイルを作成し、`data/index.json` の `files` に登録する。`id` は全ファイルを通して一意とする。
 
 各問題のスキーマは次のとおりとする。
 
@@ -68,7 +69,7 @@ data/
 | `reference` | 根拠条文（任意) |
 | `columns` | 解説下部に表示する補足コラムの配列（任意)。各要素は `title` / `body` を持つ。高圧室内作業・有機溶剤業務など、想像しにくい用語を補足したいときに使う。任意個数で、不要なら省略する。追加・記述の基準は [CLAUDE.md](CLAUDE.md) の「コラムの追加・記述方針」に定める（標準的な高校生を基準に、専門語を避け平易に書く) |
 
-Claude に「`data/law.json` に〇〇の問題を追加して」と依頼すれば、このスキーマに沿って追記できる。
+Claude に「`data/law_hazardous.json` に〇〇の問題を追加して」と依頼すれば、このスキーマに沿って追記できる。
 
 `category` / `id` / `tags` の命名規則と、未実装科目（労働衛生・労働生理）への拡張方針は [docs/categories.md](docs/categories.md) に定める。
 

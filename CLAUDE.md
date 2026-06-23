@@ -21,7 +21,7 @@
 
 ## 問題データ
 
-- 問題は `data/` 配下の科目別ファイル（例: `data/law.json`）に分割して管理し、読み込むファイルを `data/index.json` のマニフェストに列挙する。スキーマとファイル構成は [README.md](README.md) に記載する。
+- 問題は `data/` 配下のカテゴリ別ファイル（1ファイル＝1カテゴリ。ファイル名は `category` の値に一致させる。例: `data/law_hazardous.json`）に分割して管理し、読み込むファイルを `data/index.json` のマニフェストに列挙する。スキーマとファイル構成は [README.md](README.md) に記載する。
 - `category` / `id` / `tags` の命名規則と全5科目への拡張方針は [docs/categories.md](docs/categories.md) に定める。新しい科目・カテゴリを追加するときはこれに従う。
 - 各問題の `id` は学習履歴（localStorage）と紐づくため、既存の `id` は変更しない。
 - 問題・解説は法令等を一次情報として作成したオリジナルとし、市販問題集の文面を転載しない。
