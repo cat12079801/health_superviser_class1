@@ -18,6 +18,16 @@ python3 -m http.server 8000
 # http://localhost:8000 をブラウザで開く
 ```
 
+## 問題データの検証
+
+問題データ（`data/index.json` と各カテゴリファイル）の妥当性を検証するスクリプトを用意している。依存パッケージは不要で、Node.js があれば実行できる。
+
+```sh
+node scripts/validate-questions.mjs
+```
+
+JSON のパース、必須フィールド、`answerIndex` の範囲、選択肢が5つか、`id` の一意性、`category` とファイル名の一致、`columns` の構造などを検査する。エラーがあれば終了コード 1 で失敗する。この検証は GitHub Actions（`.github/workflows/validate.yml`）で Pull Request と `main` への push のたびに自動実行する。
+
 ## デプロイ（GitHub Pages）
 
 1. このリポジトリを push。
