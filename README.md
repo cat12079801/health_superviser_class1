@@ -39,7 +39,10 @@ python3 -m http.server 8000
   "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4", "選択肢5"],
   "answerIndex": 0,
   "explanation": "解説本文。",
-  "reference": "根拠条文（任意）"
+  "reference": "根拠条文（任意）",
+  "columns": [
+    { "title": "用語の具体例（任意）", "body": "具体的な作業内容などの補足。" }
+  ]
 }
 ```
 
@@ -53,6 +56,7 @@ python3 -m http.server 8000
 | `answerIndex` | 正解の選択肢インデックス（**0始まり**) |
 | `explanation` | 解説 |
 | `reference` | 根拠条文（任意) |
+| `columns` | 解説下部に表示する補足コラムの配列（任意)。各要素は `title` / `body` を持つ。高圧室内作業・有機溶剤業務など、想像しにくい用語を補足したいときに使う。任意個数で、不要なら省略する。追加・記述の基準は [CLAUDE.md](CLAUDE.md) の「コラムの追加・記述方針」に定める（標準的な高校生を基準に、専門語を避け平易に書く) |
 
 Claude に「`data/questions.json` に〇〇の問題を追加して」と依頼すれば、このスキーマに沿って追記できる。
 
