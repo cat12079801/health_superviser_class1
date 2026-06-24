@@ -2,9 +2,9 @@
 import { load, record, reset, summarize } from "./store.js";
 import {
   loadQuestions,
+  loadCategories,
   buildQuizSet,
   judge,
-  CATEGORY_LABEL,
 } from "./quiz.js";
 
 const $ = (sel) => document.querySelector(sel);
@@ -15,6 +15,9 @@ const views = {
 };
 
 let questions = [];
+let categories = [];
+// 実装済みカテゴリの category -> 表示ラベルの対応。categories.json から導出する
+let categoryLabel = {};
 let quizSet = [];
 let index = 0;
 let selected = null;
@@ -28,13 +31,39 @@ function show(name) {
 }
 
 /* ---------- ホーム ---------- */
+// 実装済みカテゴリの出題ボタンを「全問」と「復習」の間に動的生成する
+function renderCategoryMenu() {
+  const allBtn = $("#menu-all");
+  const frag = document.createDocumentFragment();
+  for (const c of categories) {
+    if (!c.implemented) continue;
+    const btn = document.createElement("button");
+    btn.className = "menu-btn";
+    btn.dataset.mode = "category";
+    btn.dataset.category = c.category;
+
+    const title = document.createElement("span");
+    title.className = "menu-title";
+    title.textContent = c.label;
+
+    const desc = document.createElement("span");
+    desc.className = "menu-desc";
+    desc.id = `cnt-${c.category}`;
+    desc.textContent = "-";
+
+    btn.append(title, desc);
+    frag.appendChild(btn);
+  }
+  allBtn.after(frag);
+}
+
 function renderHome() {
   const s = summarize(questions);
   const rate = s.answered ? Math.round((s.correct / s.answered) * 100) : 0;
   $("#home-rate").textContent = s.answered ? `${rate}%` : "--%";
   $("#home-answered").textContent = `${s.answered} / ${s.total}`;
 
-  for (const cat of Object.keys(CATEGORY_LABEL)) {
+  for (const cat of Object.keys(categoryLabel)) {
     const c = s.byCategory[cat];
     const el = $(`#cnt-${cat}`);
     if (el) el.textContent = c ? `全${c.total}問` : "0問";
@@ -64,7 +93,7 @@ function renderQuestion() {
   const q = quizSet[index];
 
   $("#quiz-progress").textContent = `${index + 1} / ${quizSet.length}`;
-  $("#q-category").textContent = CATEGORY_LABEL[q.category] || q.category;
+  $("#q-category").textContent = categoryLabel[q.category] || q.category;
   $("#q-tags").textContent = Array.isArray(q.tags) ? q.tags.join("・") : "";
   $("#q-text").textContent = q.question;
 
@@ -163,7 +192,7 @@ function renderStats() {
   const container = $("#stats-categories");
   container.innerHTML = "";
 
-  for (const [cat, label] of Object.entries(CATEGORY_LABEL)) {
+  for (const [cat, label] of Object.entries(categoryLabel)) {
     const c = s.byCategory[cat] || { total: 0, answered: 0, correct: 0 };
     const rate = c.answered ? Math.round((c.correct / c.answered) * 100) : 0;
     const row = document.createElement("div");
@@ -201,13 +230,18 @@ function bind() {
 
 /* ---------- 初期化 ---------- */
 async function init() {
-  bind();
   try {
+    categories = await loadCategories();
     questions = await loadQuestions();
   } catch (e) {
     $("#app").innerHTML = `<p class="empty-msg">${e.message}</p>`;
     return;
   }
+  categoryLabel = Object.fromEntries(
+    categories.filter((c) => c.implemented).map((c) => [c.category, c.label])
+  );
+  renderCategoryMenu();
+  bind(); // カテゴリ別ボタン生成後に bind し、生成ボタンにも click を付与する
   renderHome();
 }
 
