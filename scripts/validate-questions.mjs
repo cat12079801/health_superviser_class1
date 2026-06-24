@@ -1,19 +1,10 @@
-// 問題データ（data/index.json と各カテゴリファイル）を検証する。
+// 問題データ（data/categories.json と各カテゴリファイル）を検証する。
 // エラーがあれば終了コード 1 で終了する。依存パッケージは不要。
 // 実行: node scripts/validate-questions.mjs
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 const DATA_DIR = "data";
-
-// category とファイル名・id 接頭辞の対応（docs/categories.md に準拠）
-const CATEGORY_PREFIX = {
-  law_hazardous: "law-haz",
-  law_general: "law-gen",
-  hygiene_hazardous: "hyg-haz",
-  hygiene_general: "hyg-gen",
-  physiology: "phys",
-};
 
 const errors = [];
 const warnings = [];
@@ -29,18 +20,35 @@ function readJson(path) {
   }
 }
 
-// マニフェスト
-const indexPath = join(DATA_DIR, "index.json");
-if (!existsSync(indexPath)) err(`${indexPath} が存在しない`);
-const manifest = existsSync(indexPath) ? readJson(indexPath) : null;
-const files = manifest && Array.isArray(manifest.files) ? manifest.files : [];
-if (manifest && !Array.isArray(manifest.files)) err(`index.json に files 配列がない`);
+// カテゴリ定義の単一の定義元（label / prefix / file / implemented）
+const categoriesPath = join(DATA_DIR, "categories.json");
+if (!existsSync(categoriesPath)) err(`${categoriesPath} が存在しない`);
+const catDef = existsSync(categoriesPath) ? readJson(categoriesPath) : null;
+const categories = catDef && Array.isArray(catDef.categories) ? catDef.categories : [];
+if (catDef && !Array.isArray(catDef.categories)) err(`categories.json に categories 配列がない`);
 
-// マニフェスト未登録のデータファイル検出
+// category -> id 接頭辞（未実装カテゴリも含めて既知とする）
+const CATEGORY_PREFIX = {};
+for (const c of categories) {
+  if (!c || typeof c.category !== "string") {
+    err(`categories.json: category が不正な定義がある`);
+    continue;
+  }
+  CATEGORY_PREFIX[c.category] = c.prefix;
+  // 1ファイル＝1カテゴリ・ファイル名 == category の規則を担保する
+  if (c.file !== `${c.category}.json`) {
+    err(`categories.json: ${c.category} の file(${c.file}) はファイル名規則(${c.category}.json)と一致しない`);
+  }
+}
+
+// 実際に読み込む（実装済み）カテゴリのデータファイル
+const files = categories.filter((c) => c && c.implemented).map((c) => c.file);
+
+// 実装済みカテゴリに未登録のデータファイル検出
 if (existsSync(DATA_DIR)) {
   for (const f of readdirSync(DATA_DIR)) {
-    if (f.endsWith(".json") && f !== "index.json" && !files.includes(f)) {
-      warn(`data/${f} は index.json に登録されていない`);
+    if (f.endsWith(".json") && f !== "categories.json" && !files.includes(f)) {
+      warn(`data/${f} は categories.json の実装済みカテゴリに登録されていない`);
     }
   }
 }
@@ -51,7 +59,7 @@ let total = 0;
 for (const file of files) {
   const path = join(DATA_DIR, file);
   if (!existsSync(path)) {
-    err(`index.json が参照する ${path} が存在しない`);
+    err(`categories.json が参照する ${path} が存在しない`);
     continue;
   }
   const data = readJson(path);

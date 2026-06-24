@@ -1,13 +1,8 @@
 // 問題データの読み込みと出題ロジック
 import { getAnswers } from "./store.js";
 
-// 表示ラベルは試験結果通知の科目（又は範囲）名称に合わせる
-export const CATEGORY_LABEL = {
-  law_hazardous: "法令（有害）",
-  law_general: "法令（一般）",
-};
-
-let cache = null;
+let categoriesCache = null;
+let questionsCache = null;
 
 async function fetchJson(path) {
   const res = await fetch(path, { cache: "no-cache" });
@@ -15,14 +10,23 @@ async function fetchJson(path) {
   return res.json();
 }
 
-// data/index.json のマニフェストに列挙された科目別ファイルを読み込み、結合して返す
+// カテゴリ定義（label / prefix / file / implemented）の単一の定義元を読み込む。
+// 表示ラベル・読み込むファイル・id 接頭辞はすべて data/categories.json に集約する。
+export async function loadCategories() {
+  if (categoriesCache) return categoriesCache;
+  const data = await fetchJson("data/categories.json");
+  categoriesCache = Array.isArray(data.categories) ? data.categories : [];
+  return categoriesCache;
+}
+
+// categories.json の implemented なカテゴリのデータファイルを読み込み、結合して返す
 export async function loadQuestions() {
-  if (cache) return cache;
-  const manifest = await fetchJson("data/index.json");
-  const files = Array.isArray(manifest.files) ? manifest.files : [];
+  if (questionsCache) return questionsCache;
+  const categories = await loadCategories();
+  const files = categories.filter((c) => c.implemented).map((c) => c.file);
   const datasets = await Promise.all(files.map((file) => fetchJson(`data/${file}`)));
-  cache = datasets.flatMap((d) => (Array.isArray(d.questions) ? d.questions : []));
-  return cache;
+  questionsCache = datasets.flatMap((d) => (Array.isArray(d.questions) ? d.questions : []));
+  return questionsCache;
 }
 
 function shuffle(arr) {

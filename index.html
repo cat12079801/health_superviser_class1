@@ -28,18 +28,11 @@
 
       <h2 class="section-title">出題モード</h2>
       <div class="menu">
-        <button class="menu-btn" data-mode="all">
+        <button class="menu-btn" data-mode="all" id="menu-all">
           <span class="menu-title">全問出題</span>
           <span class="menu-desc">法令全問からランダム出題</span>
         </button>
-        <button class="menu-btn" data-mode="category" data-category="law_hazardous">
-          <span class="menu-title">法令（有害）</span>
-          <span class="menu-desc" id="cnt-law_hazardous">-</span>
-        </button>
-        <button class="menu-btn" data-mode="category" data-category="law_general">
-          <span class="menu-title">法令（一般）</span>
-          <span class="menu-desc" id="cnt-law_general">-</span>
-        </button>
+        <!-- カテゴリ別出題ボタンは js/app.js が data/categories.json の定義から動的生成する -->
         <button class="menu-btn" data-mode="review">
           <span class="menu-title">復習モード</span>
           <span class="menu-desc">不正解・未回答のみ出題</span>
