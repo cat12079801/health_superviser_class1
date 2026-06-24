@@ -1,9 +1,10 @@
 // 問題データの読み込みと出題ロジック
 import { getAnswers } from "./store.js";
 
+// 表示ラベルは試験結果通知の科目（又は範囲）名称に合わせる
 export const CATEGORY_LABEL = {
-  law_hazardous: "有害業務に係るもの",
-  law_general: "有害業務以外のもの",
+  law_hazardous: "法令（有害）",
+  law_general: "法令（一般）",
 };
 
 let cache = null;
