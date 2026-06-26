@@ -27,16 +27,30 @@
       </div>
 
       <h2 class="section-title">出題モード</h2>
+      <div class="card filter-card">
+        <p class="filter-note">出題する問題の状態を選ぶ</p>
+        <label class="toggle-row">
+          <span class="toggle-text">
+            <span class="toggle-label">未回答の問題</span>
+          </span>
+          <input type="checkbox" id="tg-unanswered" class="toggle" checked />
+          <span class="switch"></span>
+        </label>
+        <label class="toggle-row">
+          <span class="toggle-text">
+            <span class="toggle-label">誤答した問題</span>
+          </span>
+          <input type="checkbox" id="tg-wrong" class="toggle" checked />
+          <span class="switch"></span>
+        </label>
+      </div>
+
       <div class="menu">
         <button class="menu-btn" data-mode="all" id="menu-all">
           <span class="menu-title">全問出題</span>
-          <span class="menu-desc">法令全問からランダム出題</span>
+          <span class="menu-desc" id="cnt-all">-</span>
         </button>
         <!-- カテゴリ別出題ボタンは js/app.js が data/categories.json の定義から動的生成する -->
-        <button class="menu-btn" data-mode="review">
-          <span class="menu-title">復習モード</span>
-          <span class="menu-desc">不正解・未回答のみ出題</span>
-        </button>
       </div>
 
       <div class="menu-secondary">
