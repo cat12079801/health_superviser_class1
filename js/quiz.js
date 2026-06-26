@@ -38,22 +38,31 @@ function shuffle(arr) {
   return a;
 }
 
-// モードに応じて出題する問題リストを返す
-export function buildQuizSet(questions, mode, category) {
-  let pool = questions;
+// 出題対象の問題を、カテゴリと回答状態フィルタ（未回答 / 誤答）で絞り込む。
+// category を指定するとそのカテゴリに限定し、null のときは全カテゴリを対象とする。
+// 正答済みの問題は常に対象外とする（再出題する必要がないため）。
+export function selectQuestions(
+  questions,
+  { category = null, includeUnanswered = false, includeWrong = false } = {}
+) {
+  const answers = getAnswers();
+  return questions.filter((q) => {
+    if (category && q.category !== category) return false;
+    const a = answers[q.id];
+    if (!a) return includeUnanswered; // 未回答
+    if (!a.correct) return includeWrong; // 回答済みだが誤答
+    return false; // 正答済み
+  });
+}
 
-  if (mode === "category") {
-    pool = questions.filter((q) => q.category === category);
-  } else if (mode === "review") {
-    const answers = getAnswers();
-    // 未回答 または 直近不正解 を対象
-    pool = questions.filter((q) => {
-      const a = answers[q.id];
-      return !a || !a.correct;
-    });
-  }
+// 絞り込み条件に一致する問題数を返す
+export function countQuestions(questions, opts) {
+  return selectQuestions(questions, opts).length;
+}
 
-  return shuffle(pool);
+// 絞り込み条件に一致する問題をシャッフルして出題リストを返す
+export function buildQuizSet(questions, opts) {
+  return shuffle(selectQuestions(questions, opts));
 }
 
 export function judge(question, choiceIndex) {

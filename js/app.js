@@ -4,6 +4,7 @@ import {
   loadQuestions,
   loadCategories,
   buildQuizSet,
+  countQuestions,
   judge,
 } from "./quiz.js";
 
@@ -31,7 +32,7 @@ function show(name) {
 }
 
 /* ---------- ホーム ---------- */
-// 実装済みカテゴリの出題ボタンを「全問」と「復習」の間に動的生成する
+// 実装済みカテゴリの出題ボタンを「全問」ボタンの後ろに動的生成する
 function renderCategoryMenu() {
   const allBtn = $("#menu-all");
   const frag = document.createDocumentFragment();
@@ -63,24 +64,44 @@ function renderHome() {
   $("#home-rate").textContent = s.answered ? `${rate}%` : "--%";
   $("#home-answered").textContent = `${s.answered} / ${s.total}`;
 
-  for (const cat of Object.keys(categoryLabel)) {
-    const c = s.byCategory[cat];
-    const el = $(`#cnt-${cat}`);
-    if (el) el.textContent = c ? `全${c.total}問` : "0問";
-  }
+  renderCounts();
   show("home");
+}
+
+// 現在のトグル（未回答 / 誤答）の選択状況を返す
+function getFilter() {
+  return {
+    includeUnanswered: $("#tg-unanswered").checked,
+    includeWrong: $("#tg-wrong").checked,
+  };
+}
+
+// トグルの選択に応じて、各出題ボタンの対象問題数を表示し、0問のボタンを非活性にする
+function renderCounts() {
+  const filter = getFilter();
+
+  const allN = countQuestions(questions, filter);
+  $("#cnt-all").textContent = `${allN}問 / 全${questions.length}問`;
+  $("#menu-all").disabled = allN === 0;
+
+  for (const cat of Object.keys(categoryLabel)) {
+    const catTotal = questions.filter((q) => q.category === cat).length;
+    const n = countQuestions(questions, { category: cat, ...filter });
+    const el = $(`#cnt-${cat}`);
+    if (el) el.textContent = `${n}問 / 全${catTotal}問`;
+    const btn = el && el.closest(".menu-btn");
+    if (btn) btn.disabled = n === 0;
+  }
 }
 
 /* ---------- 出題 ---------- */
 function startQuiz(mode, category) {
-  quizSet = buildQuizSet(questions, mode, category);
+  const filter = getFilter();
+  const opts = mode === "category" ? { category, ...filter } : filter;
+  quizSet = buildQuizSet(questions, opts);
   index = 0;
   if (quizSet.length === 0) {
-    alert(
-      mode === "review"
-        ? "復習対象の問題はありません。よくできています。"
-        : "この区分の問題はまだありません。"
-    );
+    alert("選択した条件に該当する問題はありません。");
     return;
   }
   renderQuestion();
@@ -215,6 +236,8 @@ function bind() {
       startQuiz(btn.dataset.mode, btn.dataset.category)
     );
   });
+  $("#tg-unanswered").addEventListener("change", renderCounts);
+  $("#tg-wrong").addEventListener("change", renderCounts);
   $("#to-stats").addEventListener("click", renderStats);
   $("#quiz-back").addEventListener("click", renderHome);
   $("#stats-back").addEventListener("click", renderHome);
