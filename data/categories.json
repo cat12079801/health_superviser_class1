@@ -3,8 +3,8 @@
   "categories": [
     { "category": "law_hazardous", "label": "法令（有害）", "prefix": "law-haz", "file": "law_hazardous.json", "implemented": true },
     { "category": "law_general", "label": "法令（一般）", "prefix": "law-gen", "file": "law_general.json", "implemented": true },
-    { "category": "hygiene_hazardous", "label": "衛生（有害）", "prefix": "hyg-haz", "file": "hygiene_hazardous.json", "implemented": false },
-    { "category": "hygiene_general", "label": "衛生（一般）", "prefix": "hyg-gen", "file": "hygiene_general.json", "implemented": false },
-    { "category": "physiology", "label": "労働生理", "prefix": "phys", "file": "physiology.json", "implemented": false }
+    { "category": "hygiene_hazardous", "label": "衛生（有害）", "prefix": "hyg-haz", "file": "hygiene_hazardous.json", "implemented": true },
+    { "category": "hygiene_general", "label": "衛生（一般）", "prefix": "hyg-gen", "file": "hygiene_general.json", "implemented": true },
+    { "category": "physiology", "label": "労働生理", "prefix": "phys", "file": "physiology.json", "implemented": true }
   ]
 }

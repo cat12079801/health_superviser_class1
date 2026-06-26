@@ -1,7 +1,7 @@
 # カテゴリ・科目の命名規則と設計
 
 本アプリの問題データ（`data/` 配下の科目別ファイル）で用いる `category` / `id` / `tags` の命名規則を定める。
-現在は関係法令の2区分のみを実装しているが、将来的に第一種衛生管理者試験の全5科目へ拡張することを見据えて設計する。実装済みの2区分との後方互換を保つ。
+第一種衛生管理者試験の全5科目を対象とする。後方互換を保ちつつ拡張できるよう設計する。
 
 ## 1. 試験の科目構成
 
@@ -11,9 +11,9 @@
 |------------|----------------------|------------|-----------|--------------|------|----------|
 | 法令（有害） | 関係法令（有害業務に係るもの） | `law_hazardous` | `law-haz` | 10問 | 80点 | 実装済み |
 | 法令（一般） | 関係法令（有害業務以外のもの） | `law_general` | `law-gen` | 7問 | 70点 | 実装済み |
-| 衛生（有害） | 労働衛生（有害業務に係るもの） | `hygiene_hazardous` | `hyg-haz` | 10問 | 80点 | 未実装 |
-| 衛生（一般） | 労働衛生（有害業務以外のもの） | `hygiene_general` | `hyg-gen` | 7問 | 70点 | 未実装 |
-| 労働生理 | 労働生理 | `physiology` | `phys` | 10問 | 100点 | 未実装 |
+| 衛生（有害） | 労働衛生（有害業務に係るもの） | `hygiene_hazardous` | `hyg-haz` | 10問 | 80点 | 実装済み |
+| 衛生（一般） | 労働衛生（有害業務以外のもの） | `hygiene_general` | `hyg-gen` | 7問 | 70点 | 実装済み |
+| 労働生理 | 労働生理 | `physiology` | `phys` | 10問 | 100点 | 実装済み |
 
 合計44問・400点満点である。合格基準は各科目40%以上かつ全科目合計60%以上である。
 
@@ -85,9 +85,9 @@ phys-001      労働生理の1問目
 |------------|----------|
 | `law_hazardous` | `data/law_hazardous.json` |
 | `law_general` | `data/law_general.json` |
-| `hygiene_hazardous`（未実装） | `data/hygiene_hazardous.json` |
-| `hygiene_general`（未実装） | `data/hygiene_general.json` |
-| `physiology`（未実装） | `data/physiology.json` |
+| `hygiene_hazardous` | `data/hygiene_hazardous.json` |
+| `hygiene_general` | `data/hygiene_general.json` |
+| `physiology` | `data/physiology.json` |
 
 ## 7. 模擬試験モードでの利用（将来）
 
