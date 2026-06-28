@@ -35,6 +35,10 @@ function show(name) {
 // 実装済みカテゴリの出題ボタンを「全問」ボタンの後ろに動的生成する
 function renderCategoryMenu() {
   const allBtn = $("#menu-all");
+  // 再生成（問題更新時）でボタンが重複しないよう、既存の動的ボタンを除去する
+  document
+    .querySelectorAll('.menu-btn[data-mode="category"]')
+    .forEach((b) => b.remove());
   const frag = document.createDocumentFragment();
   for (const c of categories) {
     if (!c.implemented) continue;
@@ -231,14 +235,17 @@ function renderStats() {
 
 /* ---------- イベント ---------- */
 function bind() {
-  document.querySelectorAll(".menu-btn").forEach((btn) => {
-    btn.addEventListener("click", () =>
-      startQuiz(btn.dataset.mode, btn.dataset.category)
-    );
+  // 出題ボタンはイベント委譲で扱う。カテゴリ別ボタンは問題更新時に再生成されるため、
+  // 個別に addEventListener せず親要素で受ける。
+  $(".menu").addEventListener("click", (e) => {
+    const btn = e.target.closest(".menu-btn");
+    if (!btn || btn.disabled) return;
+    startQuiz(btn.dataset.mode, btn.dataset.category);
   });
   $("#tg-unanswered").addEventListener("change", renderCounts);
   $("#tg-wrong").addEventListener("change", renderCounts);
   $("#to-stats").addEventListener("click", renderStats);
+  $("#refresh-data").addEventListener("click", refreshData);
   $("#quiz-back").addEventListener("click", renderHome);
   $("#stats-back").addEventListener("click", renderHome);
   $("#q-submit").addEventListener("click", submitAnswer);
@@ -249,6 +256,38 @@ function bind() {
       renderStats();
     }
   });
+}
+
+/* ---------- 問題の更新 ---------- */
+// iOS のホーム画面アプリ（standalone）ではページのリロードができないため、
+// キャッシュを無視して問題データを取得し直し、ホームを再構築する。
+async function refreshData() {
+  const btn = $("#refresh-data");
+  const status = $("#refresh-status");
+  const prevCount = questions.length;
+  btn.disabled = true;
+  status.textContent = "更新中…";
+  status.className = "refresh-status";
+  try {
+    categories = await loadCategories({ force: true });
+    questions = await loadQuestions({ force: true });
+    categoryLabel = Object.fromEntries(
+      categories.filter((c) => c.implemented).map((c) => [c.category, c.label])
+    );
+    renderCategoryMenu();
+    renderHome();
+    const diff = questions.length - prevCount;
+    status.textContent =
+      diff > 0
+        ? `更新しました（+${diff}問・全${questions.length}問）`
+        : `最新です（全${questions.length}問）`;
+    status.className = "refresh-status ok";
+  } catch (e) {
+    status.textContent = "更新に失敗しました。通信状況を確認してください。";
+    status.className = "refresh-status ng";
+  } finally {
+    btn.disabled = false;
+  }
 }
 
 /* ---------- 初期化 ---------- */

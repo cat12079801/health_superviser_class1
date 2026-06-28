@@ -113,6 +113,10 @@ body {
   background: none; border: none; color: var(--primary);
   font-size: 0.95rem; cursor: pointer; padding: 8px;
 }
+.link-btn:disabled { opacity: 0.5; cursor: default; }
+.refresh-status { font-size: 0.82rem; color: var(--text-sub); margin: 6px 0 0; min-height: 1.1em; }
+.refresh-status.ok { color: var(--primary); }
+.refresh-status.ng { color: #c0392b; }
 
 /* 出題バー */
 .quiz-bar {
