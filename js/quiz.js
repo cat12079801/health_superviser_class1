@@ -4,27 +4,35 @@ import { getAnswers } from "./store.js";
 let categoriesCache = null;
 let questionsCache = null;
 
-async function fetchJson(path) {
-  const res = await fetch(path, { cache: "no-cache" });
+async function fetchJson(path, { bust = false } = {}) {
+  // bust 指定時はクエリ文字列でキャッシュを確実に回避する。
+  // iOS のホーム画面アプリ（standalone）ではページのリロード手段がなく、
+  // HTTP キャッシュから古いデータが返ると問題の追加が反映されないためである。
+  const url = bust ? `${path}?t=${Date.now()}` : path;
+  const res = await fetch(url, { cache: bust ? "reload" : "no-cache" });
   if (!res.ok) throw new Error(`データの読み込みに失敗しました: ${path} (${res.status})`);
   return res.json();
 }
 
 // カテゴリ定義（label / prefix / file / implemented）の単一の定義元を読み込む。
 // 表示ラベル・読み込むファイル・id 接頭辞はすべて data/categories.json に集約する。
-export async function loadCategories() {
-  if (categoriesCache) return categoriesCache;
-  const data = await fetchJson("data/categories.json");
+// force 指定時はキャッシュを無視して再取得する。
+export async function loadCategories({ force = false } = {}) {
+  if (categoriesCache && !force) return categoriesCache;
+  const data = await fetchJson("data/categories.json", { bust: force });
   categoriesCache = Array.isArray(data.categories) ? data.categories : [];
   return categoriesCache;
 }
 
-// categories.json の implemented なカテゴリのデータファイルを読み込み、結合して返す
-export async function loadQuestions() {
-  if (questionsCache) return questionsCache;
-  const categories = await loadCategories();
+// categories.json の implemented なカテゴリのデータファイルを読み込み、結合して返す。
+// force 指定時はキャッシュを無視して再取得する。
+export async function loadQuestions({ force = false } = {}) {
+  if (questionsCache && !force) return questionsCache;
+  const categories = await loadCategories({ force });
   const files = categories.filter((c) => c.implemented).map((c) => c.file);
-  const datasets = await Promise.all(files.map((file) => fetchJson(`data/${file}`)));
+  const datasets = await Promise.all(
+    files.map((file) => fetchJson(`data/${file}`, { bust: force }))
+  );
   questionsCache = datasets.flatMap((d) => (Array.isArray(d.questions) ? d.questions : []));
   return questionsCache;
 }
