@@ -4,6 +4,7 @@
     {
       "id": "hyg-gen-001",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "温熱条件",
         "作業環境管理"
@@ -23,6 +24,7 @@
     {
       "id": "hyg-gen-002",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "温熱条件"
       ],
@@ -41,6 +43,7 @@
     {
       "id": "hyg-gen-003",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "採光・照明",
         "事務所則"
@@ -60,6 +63,7 @@
     {
       "id": "hyg-gen-004",
       "category": "hygiene_general",
+      "difficulty": "hard",
       "tags": [
         "換気",
         "事務所則"
@@ -79,6 +83,7 @@
     {
       "id": "hyg-gen-005",
       "category": "hygiene_general",
+      "difficulty": "hard",
       "tags": [
         "換気",
         "事務所則"
@@ -98,6 +103,7 @@
     {
       "id": "hyg-gen-006",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "事務所則",
         "作業環境管理"
@@ -117,6 +123,7 @@
     {
       "id": "hyg-gen-007",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "一般健康診断",
         "健康管理"
@@ -136,6 +143,7 @@
     {
       "id": "hyg-gen-008",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "健康管理",
         "労働衛生統計"
@@ -155,6 +163,7 @@
     {
       "id": "hyg-gen-009",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "メンタルヘルス",
         "健康管理"
@@ -174,6 +183,7 @@
     {
       "id": "hyg-gen-010",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "情報機器作業",
         "作業管理"
@@ -193,6 +203,7 @@
     {
       "id": "hyg-gen-011",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "腰痛予防",
         "作業管理"
@@ -212,6 +223,7 @@
     {
       "id": "hyg-gen-012",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "受動喫煙",
         "健康管理"
@@ -231,6 +243,7 @@
     {
       "id": "hyg-gen-013",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "救急処置"
       ],
@@ -249,6 +262,7 @@
     {
       "id": "hyg-gen-014",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "救急処置"
       ],
@@ -267,6 +281,7 @@
     {
       "id": "hyg-gen-015",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "救急処置"
       ],
@@ -285,6 +300,7 @@
     {
       "id": "hyg-gen-016",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "救急処置"
       ],
@@ -303,6 +319,7 @@
     {
       "id": "hyg-gen-017",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "救急処置"
       ],
@@ -321,6 +338,7 @@
     {
       "id": "hyg-gen-018",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "食中毒"
       ],
@@ -339,6 +357,7 @@
     {
       "id": "hyg-gen-019",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "食中毒"
       ],
@@ -357,6 +376,7 @@
     {
       "id": "hyg-gen-020",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "労働衛生統計"
       ],
@@ -375,6 +395,7 @@
     {
       "id": "hyg-gen-021",
       "category": "hygiene_general",
+      "difficulty": "hard",
       "tags": [
         "労働衛生統計"
       ],
@@ -393,6 +414,7 @@
     {
       "id": "hyg-gen-022",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "健康管理",
         "健康保持増進"
@@ -412,6 +434,7 @@
     {
       "id": "hyg-gen-023",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "作業管理",
         "休憩"
@@ -431,6 +454,7 @@
     {
       "id": "hyg-gen-024",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "事務所則",
         "作業環境管理"
@@ -450,6 +474,7 @@
     {
       "id": "hyg-gen-025",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "健康管理",
         "脳・心臓疾患"
@@ -469,6 +494,7 @@
     {
       "id": "hyg-gen-026",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "メンタルヘルス",
         "ストレスチェック"
@@ -488,6 +514,7 @@
     {
       "id": "hyg-gen-027",
       "category": "hygiene_general",
+      "difficulty": "standard",
       "tags": [
         "感染症",
         "健康管理"
@@ -507,6 +534,7 @@
     {
       "id": "hyg-gen-028",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "温熱条件",
         "熱中症"
@@ -526,6 +554,7 @@
     {
       "id": "hyg-gen-029",
       "category": "hygiene_general",
+      "difficulty": "easy",
       "tags": [
         "健康管理",
         "保健指導"
@@ -545,6 +574,7 @@
     {
       "id": "hyg-gen-030",
       "category": "hygiene_general",
+      "difficulty": "hard",
       "tags": [
         "作業環境管理",
         "換気"

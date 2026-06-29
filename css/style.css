@@ -208,6 +208,15 @@ body {
 .cat-row .cat-name { font-weight: 600; }
 .bar { height: 10px; background: #eef2f0; border-radius: 999px; overflow: hidden; }
 .bar-fill { height: 100%; background: var(--primary); border-radius: 999px; transition: width 0.4s; }
+.bar-sm { height: 6px; }
+
+/* 難易度別の正答率（カテゴリ別の下に細分化して表示） */
+.diff-row { display: flex; align-items: center; gap: 8px; margin-top: 6px; padding-left: 8px; }
+.diff-row .diff-name {
+  flex: 0 0 1.4em; font-size: 0.8rem; font-weight: 600; color: var(--text-sub); text-align: center;
+}
+.diff-row .bar { flex: 1; }
+.diff-row .diff-val { flex: 0 0 auto; font-size: 0.78rem; color: var(--text-sub); min-width: 5.5em; text-align: right; }
 
 .danger-zone h3 { margin: 0 0 4px; font-size: 0.95rem; color: var(--wrong); }
 .note { font-size: 0.82rem; color: var(--text-sub); margin: 0 0 12px; }

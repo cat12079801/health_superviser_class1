@@ -1,5 +1,12 @@
 // 画面制御
-import { load, record, reset, summarize } from "./store.js";
+import {
+  load,
+  record,
+  reset,
+  summarize,
+  DIFFICULTIES,
+  DIFFICULTY_LABEL,
+} from "./store.js";
 import {
   loadQuestions,
   loadCategories,
@@ -211,6 +218,21 @@ function nextQuestion() {
   }
 }
 
+// カテゴリ別正答率の下に、難（hard）/並（standard）/易（easy）別の正答率を表示する
+function renderDifficultyRows(byDifficulty = {}) {
+  return DIFFICULTIES.map((key) => {
+    const d = byDifficulty[key] || { total: 0, answered: 0, correct: 0 };
+    if (d.total === 0) return ""; // その難易度の問題がなければ行を出さない
+    const rate = d.answered ? Math.round((d.correct / d.answered) * 100) : 0;
+    return `
+      <div class="diff-row">
+        <span class="diff-name">${DIFFICULTY_LABEL[key]}</span>
+        <div class="bar bar-sm"><div class="bar-fill" style="width:${rate}%"></div></div>
+        <span class="diff-val">${d.answered ? rate + "%" : "未回答"} <small>(${d.answered}/${d.total})</small></span>
+      </div>`;
+  }).join("");
+}
+
 /* ---------- 統計 ---------- */
 function renderStats() {
   const s = summarize(questions);
@@ -218,7 +240,7 @@ function renderStats() {
   container.innerHTML = "";
 
   for (const [cat, label] of Object.entries(categoryLabel)) {
-    const c = s.byCategory[cat] || { total: 0, answered: 0, correct: 0 };
+    const c = s.byCategory[cat] || { total: 0, answered: 0, correct: 0, byDifficulty: {} };
     const rate = c.answered ? Math.round((c.correct / c.answered) * 100) : 0;
     const row = document.createElement("div");
     row.className = "cat-row";
@@ -227,7 +249,8 @@ function renderStats() {
         <span class="cat-name">${label}</span>
         <span>${c.answered ? rate + "%" : "未回答"} <small>(${c.answered}/${c.total})</small></span>
       </div>
-      <div class="bar"><div class="bar-fill" style="width:${rate}%"></div></div>`;
+      <div class="bar"><div class="bar-fill" style="width:${rate}%"></div></div>
+      ${renderDifficultyRows(c.byDifficulty)}`;
     container.appendChild(row);
   }
   show("stats");

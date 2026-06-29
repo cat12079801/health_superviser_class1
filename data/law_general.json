@@ -4,6 +4,7 @@
     {
       "id": "law-gen-001",
       "category": "law_general",
+      "difficulty": "easy",
       "tags": [
         "安衛法",
         "衛生管理者"
@@ -33,6 +34,7 @@
     {
       "id": "law-gen-002",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "産業医"
@@ -62,6 +64,7 @@
     {
       "id": "law-gen-003",
       "category": "law_general",
+      "difficulty": "easy",
       "tags": [
         "安衛法",
         "衛生委員会"
@@ -87,6 +90,7 @@
     {
       "id": "law-gen-004",
       "category": "law_general",
+      "difficulty": "easy",
       "tags": [
         "安衛則",
         "一般健康診断"
@@ -116,6 +120,7 @@
     {
       "id": "law-gen-005",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "ストレスチェック"
@@ -145,6 +150,7 @@
     {
       "id": "law-gen-006",
       "category": "law_general",
+      "difficulty": "hard",
       "tags": [
         "労基法",
         "妊産婦"
@@ -174,6 +180,7 @@
     {
       "id": "law-gen-007",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "総括安全衛生管理者"
@@ -193,6 +200,7 @@
     {
       "id": "law-gen-008",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "衛生管理者"
@@ -212,6 +220,7 @@
     {
       "id": "law-gen-009",
       "category": "law_general",
+      "difficulty": "hard",
       "tags": [
         "安衛則",
         "衛生管理者",
@@ -232,6 +241,7 @@
     {
       "id": "law-gen-010",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "衛生管理者",
@@ -252,6 +262,7 @@
     {
       "id": "law-gen-011",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "衛生推進者"
@@ -271,6 +282,7 @@
     {
       "id": "law-gen-012",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "産業医"
@@ -290,6 +302,7 @@
     {
       "id": "law-gen-013",
       "category": "law_general",
+      "difficulty": "easy",
       "tags": [
         "安衛則",
         "衛生委員会"
@@ -309,6 +322,7 @@
     {
       "id": "law-gen-014",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "安全衛生教育"
@@ -328,6 +342,7 @@
     {
       "id": "law-gen-015",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "健康診断"
@@ -347,6 +362,7 @@
     {
       "id": "law-gen-016",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "健康診断"
@@ -366,6 +382,7 @@
     {
       "id": "law-gen-017",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "面接指導"
@@ -385,6 +402,7 @@
     {
       "id": "law-gen-018",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "労基法",
         "労働時間"
@@ -404,6 +422,7 @@
     {
       "id": "law-gen-019",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "労基法",
         "年次有給休暇"
@@ -423,6 +442,7 @@
     {
       "id": "law-gen-020",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "労基法",
         "年少者"
@@ -442,6 +462,7 @@
     {
       "id": "law-gen-021",
       "category": "law_general",
+      "difficulty": "hard",
       "tags": [
         "労基法",
         "女性"
@@ -461,6 +482,7 @@
     {
       "id": "law-gen-022",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "労基法",
         "三六協定"
@@ -486,6 +508,7 @@
     {
       "id": "law-gen-023",
       "category": "law_general",
+      "difficulty": "hard",
       "tags": [
         "安衛則",
         "気積・換気"
@@ -511,6 +534,7 @@
     {
       "id": "law-gen-024",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "休養室"
@@ -530,6 +554,7 @@
     {
       "id": "law-gen-025",
       "category": "law_general",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "ストレスチェック"
@@ -555,6 +580,7 @@
     {
       "id": "law-gen-026",
       "category": "law_general",
+      "difficulty": "easy",
       "tags": [
         "安衛則",
         "衛生管理者"

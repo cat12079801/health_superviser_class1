@@ -101,6 +101,11 @@ for (const file of files) {
       err(`${at}: id が category の接頭辞(${prefix}-)で始まっていない`);
     }
 
+    // difficulty（必須）: hard（難）/ standard（並）/ easy（易）のいずれか
+    if (!["hard", "standard", "easy"].includes(q.difficulty)) {
+      err(`${at}: difficulty は "hard" / "standard" / "easy" のいずれかであること（現在: ${JSON.stringify(q.difficulty)}）`);
+    }
+
     // question
     if (typeof q.question !== "string" || !q.question.trim()) {
       err(`${at}: question が空`);

@@ -4,6 +4,7 @@
     {
       "id": "hyg-haz-001",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有害物質",
         "作業環境管理"
@@ -23,6 +24,7 @@
     {
       "id": "hyg-haz-002",
       "category": "hygiene_hazardous",
+      "difficulty": "hard",
       "tags": [
         "有害物質"
       ],
@@ -41,6 +43,7 @@
     {
       "id": "hyg-haz-003",
       "category": "hygiene_hazardous",
+      "difficulty": "hard",
       "tags": [
         "有害物質"
       ],
@@ -59,6 +62,7 @@
     {
       "id": "hyg-haz-004",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機溶剤"
       ],
@@ -77,6 +81,7 @@
     {
       "id": "hyg-haz-005",
       "category": "hygiene_hazardous",
+      "difficulty": "hard",
       "tags": [
         "有機溶剤",
         "有害物質"
@@ -96,6 +101,7 @@
     {
       "id": "hyg-haz-006",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "一酸化炭素",
         "有害物質"
@@ -115,6 +121,7 @@
     {
       "id": "hyg-haz-007",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有害物質",
         "金属"
@@ -134,6 +141,7 @@
     {
       "id": "hyg-haz-008",
       "category": "hygiene_hazardous",
+      "difficulty": "hard",
       "tags": [
         "有害物質"
       ],
@@ -152,6 +160,7 @@
     {
       "id": "hyg-haz-009",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "職業がん",
         "有害物質"
@@ -171,6 +180,7 @@
     {
       "id": "hyg-haz-010",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺",
         "粉じん"
@@ -190,6 +200,7 @@
     {
       "id": "hyg-haz-011",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "騒音",
         "職業性疾病"
@@ -209,6 +220,7 @@
     {
       "id": "hyg-haz-012",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "振動障害",
         "職業性疾病"
@@ -228,6 +240,7 @@
     {
       "id": "hyg-haz-013",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離放射線",
         "職業性疾病"
@@ -247,6 +260,7 @@
     {
       "id": "hyg-haz-014",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "温熱条件",
         "熱中症"
@@ -266,6 +280,7 @@
     {
       "id": "hyg-haz-015",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "減圧症"
@@ -285,6 +300,7 @@
     {
       "id": "hyg-haz-016",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "酸素欠乏"
@@ -304,6 +320,7 @@
     {
       "id": "hyg-haz-017",
       "category": "hygiene_hazardous",
+      "difficulty": "hard",
       "tags": [
         "局所排気装置",
         "作業環境管理"
@@ -323,6 +340,7 @@
     {
       "id": "hyg-haz-018",
       "category": "hygiene_hazardous",
+      "difficulty": "hard",
       "tags": [
         "局所排気装置",
         "作業環境管理"
@@ -342,6 +360,7 @@
     {
       "id": "hyg-haz-019",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "保護具"
       ],
@@ -360,6 +379,7 @@
     {
       "id": "hyg-haz-020",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "保護具"
       ],
@@ -378,6 +398,7 @@
     {
       "id": "hyg-haz-021",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -397,6 +418,7 @@
     {
       "id": "hyg-haz-022",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -416,6 +438,7 @@
     {
       "id": "hyg-haz-023",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "管理濃度",
         "作業環境管理"
@@ -435,6 +458,7 @@
     {
       "id": "hyg-haz-024",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業管理",
         "作業環境管理"
@@ -454,6 +478,7 @@
     {
       "id": "hyg-haz-025",
       "category": "hygiene_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "有害物質"
@@ -473,6 +498,7 @@
     {
       "id": "hyg-haz-026",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有害物質",
         "リスクアセスメント"
@@ -492,6 +518,7 @@
     {
       "id": "hyg-haz-027",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん",
         "粉じん則"
@@ -511,6 +538,7 @@
     {
       "id": "hyg-haz-028",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特殊健康診断",
         "健康管理"
@@ -530,6 +558,7 @@
     {
       "id": "hyg-haz-029",
       "category": "hygiene_hazardous",
+      "difficulty": "easy",
       "tags": [
         "有害物質",
         "作業環境管理"
@@ -549,6 +578,7 @@
     {
       "id": "hyg-haz-030",
       "category": "hygiene_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境管理",
         "換気"

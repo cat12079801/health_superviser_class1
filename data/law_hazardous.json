@@ -4,6 +4,7 @@
     {
       "id": "law-haz-001",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -41,6 +42,7 @@
     {
       "id": "law-haz-002",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -78,6 +80,7 @@
     {
       "id": "law-haz-003",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛令",
         "作業環境測定"
@@ -107,6 +110,7 @@
     {
       "id": "law-haz-004",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "特殊健康診断"
@@ -140,6 +144,7 @@
     {
       "id": "law-haz-005",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "局所排気装置"
@@ -169,6 +174,7 @@
     {
       "id": "law-haz-006",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造許可物質"
@@ -198,6 +204,7 @@
     {
       "id": "law-haz-007",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者",
@@ -224,6 +231,7 @@
     {
       "id": "law-haz-008",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛令",
         "作業環境測定"
@@ -249,6 +257,7 @@
     {
       "id": "law-haz-009",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "作業環境測定法",
         "作業環境測定"
@@ -268,6 +277,7 @@
     {
       "id": "law-haz-010",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛令",
         "特殊健康診断"
@@ -293,6 +303,7 @@
     {
       "id": "law-haz-011",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛令",
         "特殊健康診断"
@@ -312,6 +323,7 @@
     {
       "id": "law-haz-012",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "じん肺法",
         "じん肺健康診断"
@@ -337,6 +349,7 @@
     {
       "id": "law-haz-013",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "型式検定"
@@ -362,6 +375,7 @@
     {
       "id": "law-haz-014",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造等禁止物質"
@@ -387,6 +401,7 @@
     {
       "id": "law-haz-015",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -406,6 +421,7 @@
     {
       "id": "law-haz-016",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "定期自主検査"
@@ -431,6 +447,7 @@
     {
       "id": "law-haz-017",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "有機溶剤"
@@ -456,6 +473,7 @@
     {
       "id": "law-haz-018",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "局所排気装置"
@@ -475,6 +493,7 @@
     {
       "id": "law-haz-019",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特定化学物質"
@@ -500,6 +519,7 @@
     {
       "id": "law-haz-020",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "酸素欠乏"
@@ -525,6 +545,7 @@
     {
       "id": "law-haz-021",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "高気圧業務"
@@ -550,6 +571,7 @@
     {
       "id": "law-haz-022",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "電離放射線"
@@ -575,6 +597,7 @@
     {
       "id": "law-haz-023",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "粉じん"
@@ -600,6 +623,7 @@
     {
       "id": "law-haz-024",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "石綿則",
         "石綿"
@@ -625,6 +649,7 @@
     {
       "id": "law-haz-025",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "立入禁止"
@@ -644,6 +669,7 @@
     {
       "id": "law-haz-026",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康管理手帳"
@@ -669,6 +695,7 @@
     {
       "id": "law-haz-027",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者",
@@ -695,6 +722,7 @@
     {
       "id": "law-haz-028",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛令",
         "作業主任者"
@@ -720,6 +748,7 @@
     {
       "id": "law-haz-029",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "作業主任者"
@@ -739,6 +768,7 @@
     {
       "id": "law-haz-030",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -764,6 +794,7 @@
     {
       "id": "law-haz-031",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛令",
         "作業環境測定"
@@ -783,6 +814,7 @@
     {
       "id": "law-haz-032",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "作業環境測定"
@@ -802,6 +834,7 @@
     {
       "id": "law-haz-033",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "作業環境測定"
@@ -827,6 +860,7 @@
     {
       "id": "law-haz-034",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "評価"
@@ -852,6 +886,7 @@
     {
       "id": "law-haz-035",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "評価"
@@ -871,6 +906,7 @@
     {
       "id": "law-haz-036",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特殊健康診断"
@@ -896,6 +932,7 @@
     {
       "id": "law-haz-037",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "特殊健康診断"
@@ -921,6 +958,7 @@
     {
       "id": "law-haz-038",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "特殊健康診断"
@@ -940,6 +978,7 @@
     {
       "id": "law-haz-039",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造許可物質"
@@ -959,6 +998,7 @@
     {
       "id": "law-haz-040",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "製造等禁止物質"
@@ -978,6 +1018,7 @@
     {
       "id": "law-haz-041",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "表示・通知"
@@ -1003,6 +1044,7 @@
     {
       "id": "law-haz-042",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "局所排気装置",
         "作業環境管理"
@@ -1028,6 +1070,7 @@
     {
       "id": "law-haz-043",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "局所排気装置",
         "作業環境管理"
@@ -1047,6 +1090,7 @@
     {
       "id": "law-haz-044",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "作業環境管理",
         "換気"
@@ -1066,6 +1110,7 @@
     {
       "id": "law-haz-045",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "定期自主検査"
@@ -1085,6 +1130,7 @@
     {
       "id": "law-haz-046",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "定期自主検査"
@@ -1104,6 +1150,7 @@
     {
       "id": "law-haz-047",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "有機則",
         "有機溶剤"
@@ -1123,6 +1170,7 @@
     {
       "id": "law-haz-048",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "有機溶剤"
@@ -1148,6 +1196,7 @@
     {
       "id": "law-haz-049",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "掲示"
@@ -1167,6 +1216,7 @@
     {
       "id": "law-haz-050",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "特別管理物質"
@@ -1186,6 +1236,7 @@
     {
       "id": "law-haz-051",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特定化学物質"
@@ -1205,6 +1256,7 @@
     {
       "id": "law-haz-052",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特定化学設備"
@@ -1224,6 +1276,7 @@
     {
       "id": "law-haz-053",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "石綿則",
         "石綿"
@@ -1243,6 +1296,7 @@
     {
       "id": "law-haz-054",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "鉛則",
         "鉛"
@@ -1268,6 +1322,7 @@
     {
       "id": "law-haz-055",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "酸素欠乏"
@@ -1293,6 +1348,7 @@
     {
       "id": "law-haz-056",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "酸素欠乏"
@@ -1318,6 +1374,7 @@
     {
       "id": "law-haz-057",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "高気圧業務"
@@ -1337,6 +1394,7 @@
     {
       "id": "law-haz-058",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "電離則",
         "電離放射線"
@@ -1356,6 +1414,7 @@
     {
       "id": "law-haz-059",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "線量限度"
@@ -1375,6 +1434,7 @@
     {
       "id": "law-haz-060",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "電離放射線"
@@ -1394,6 +1454,7 @@
     {
       "id": "law-haz-061",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "粉じん"
@@ -1413,6 +1474,7 @@
     {
       "id": "law-haz-062",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "じん肺健康診断"
@@ -1432,6 +1494,7 @@
     {
       "id": "law-haz-063",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "じん肺健康診断"
@@ -1451,6 +1514,7 @@
     {
       "id": "law-haz-064",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -1470,6 +1534,7 @@
     {
       "id": "law-haz-065",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "型式検定"
@@ -1489,6 +1554,7 @@
     {
       "id": "law-haz-066",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康管理手帳"
@@ -1514,6 +1580,7 @@
     {
       "id": "law-haz-067",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "女性則",
         "就業制限"
@@ -1539,6 +1606,7 @@
     {
       "id": "law-haz-068",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "年少者",
         "就業制限"
@@ -1558,6 +1626,7 @@
     {
       "id": "law-haz-069",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生教育"
@@ -1577,6 +1646,7 @@
     {
       "id": "law-haz-070",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛則",
         "衛生工学衛生管理者"
@@ -1602,6 +1672,7 @@
     {
       "id": "law-haz-071",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "作業環境測定",
         "記録"
@@ -1621,6 +1692,7 @@
     {
       "id": "law-haz-072",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定法",
         "作業環境測定"
@@ -1640,6 +1712,7 @@
     {
       "id": "law-haz-073",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "呼吸用保護具"
@@ -1659,6 +1732,7 @@
     {
       "id": "law-haz-074",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "用後処理"
@@ -1678,6 +1752,7 @@
     {
       "id": "law-haz-075",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "石綿則",
         "石綿"
@@ -1697,6 +1772,7 @@
     {
       "id": "law-haz-076",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "四アルキル鉛則",
         "四アルキル鉛"
@@ -1722,6 +1798,7 @@
     {
       "id": "law-haz-077",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "酸素欠乏"
@@ -1747,6 +1824,7 @@
     {
       "id": "law-haz-078",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "高気圧業務"
@@ -1766,6 +1844,7 @@
     {
       "id": "law-haz-079",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "線量限度"
@@ -1785,6 +1864,7 @@
     {
       "id": "law-haz-080",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "呼吸用保護具"
@@ -1804,6 +1884,7 @@
     {
       "id": "law-haz-081",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "局所排気装置",
         "定期自主検査"
@@ -1823,6 +1904,7 @@
     {
       "id": "law-haz-082",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "譲渡等の制限"
@@ -1842,6 +1924,7 @@
     {
       "id": "law-haz-083",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "化学物質管理者"
@@ -1867,6 +1950,7 @@
     {
       "id": "law-haz-084",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "リスクアセスメント"
@@ -1886,6 +1970,7 @@
     {
       "id": "law-haz-085",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "呼吸用保護具",
         "作業管理"
@@ -1905,6 +1990,7 @@
     {
       "id": "law-haz-086",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "安衛法",
         "受動喫煙防止"
@@ -1924,6 +2010,7 @@
     {
       "id": "law-haz-087",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造等禁止物質"
@@ -1943,6 +2030,7 @@
     {
       "id": "law-haz-088",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -1962,6 +2050,7 @@
     {
       "id": "law-haz-089",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "安衛法",
         "衛生委員会"
@@ -1981,6 +2070,7 @@
     {
       "id": "law-haz-090",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "溶接ヒューム"
@@ -2006,6 +2096,7 @@
     {
       "id": "law-haz-091",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "騒音"
@@ -2025,6 +2116,7 @@
     {
       "id": "law-haz-092",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "局所排気装置",
         "作業環境管理"
@@ -2044,6 +2136,7 @@
     {
       "id": "law-haz-093",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "有機溶剤"
@@ -2063,6 +2156,7 @@
     {
       "id": "law-haz-094",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛令",
         "特殊健康診断"
@@ -2082,6 +2176,7 @@
     {
       "id": "law-haz-095",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特定化学物質"
@@ -2101,6 +2196,7 @@
     {
       "id": "law-haz-096",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "安衛則",
         "立入禁止"
@@ -2120,6 +2216,7 @@
     {
       "id": "law-haz-097",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "有機則",
         "貯蔵"
@@ -2139,6 +2236,7 @@
     {
       "id": "law-haz-098",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "じん肺健康診断"
@@ -2158,6 +2256,7 @@
     {
       "id": "law-haz-099",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -2177,6 +2276,7 @@
     {
       "id": "law-haz-100",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛令",
         "作業環境測定"
@@ -2196,6 +2296,7 @@
     {
       "id": "law-haz-101",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -2215,6 +2316,7 @@
     {
       "id": "law-haz-102",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者",
@@ -2235,6 +2337,7 @@
     {
       "id": "law-haz-103",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "譲渡制限",
@@ -2255,6 +2358,7 @@
     {
       "id": "law-haz-104",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造許可物質",
@@ -2275,6 +2379,7 @@
     {
       "id": "law-haz-105",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造禁止物質"
@@ -2294,6 +2399,7 @@
     {
       "id": "law-haz-106",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -2313,6 +2419,7 @@
     {
       "id": "law-haz-107",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "健康管理手帳"
@@ -2332,6 +2439,7 @@
     {
       "id": "law-haz-108",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -2351,6 +2459,7 @@
     {
       "id": "law-haz-109",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "安全衛生管理体制"
@@ -2370,6 +2479,7 @@
     {
       "id": "law-haz-110",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -2389,6 +2499,7 @@
     {
       "id": "law-haz-111",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "作業環境測定",
         "鉛則"
@@ -2408,6 +2519,7 @@
     {
       "id": "law-haz-112",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "作業環境測定",
         "特化則",
@@ -2428,6 +2540,7 @@
     {
       "id": "law-haz-113",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特殊健康診断",
         "電離則",
@@ -2448,6 +2561,7 @@
     {
       "id": "law-haz-114",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "定期自主検査",
         "局所排気装置"
@@ -2467,6 +2581,7 @@
     {
       "id": "law-haz-115",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "定期自主検査",
         "特化則"
@@ -2486,6 +2601,7 @@
     {
       "id": "law-haz-116",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "作業環境管理"
@@ -2505,6 +2621,7 @@
     {
       "id": "law-haz-117",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "有機則",
         "局所排気装置"
@@ -2524,6 +2641,7 @@
     {
       "id": "law-haz-118",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特殊健康診断"
@@ -2543,6 +2661,7 @@
     {
       "id": "law-haz-119",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "酸素欠乏"
@@ -2562,6 +2681,7 @@
     {
       "id": "law-haz-120",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "電離則",
         "電離放射線"
@@ -2581,6 +2701,7 @@
     {
       "id": "law-haz-121",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "じん肺"
@@ -2600,6 +2721,7 @@
     {
       "id": "law-haz-122",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "作業主任者"
@@ -2619,6 +2741,7 @@
     {
       "id": "law-haz-123",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "女性則",
         "有害物質"
@@ -2638,6 +2761,7 @@
     {
       "id": "law-haz-124",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "有害物質"
@@ -2657,6 +2781,7 @@
     {
       "id": "law-haz-125",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生教育"
@@ -2676,6 +2801,7 @@
     {
       "id": "law-haz-126",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "有害物質"
@@ -2695,6 +2821,7 @@
     {
       "id": "law-haz-127",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "石綿則",
         "石綿"
@@ -2714,6 +2841,7 @@
     {
       "id": "law-haz-128",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "粉じん"
@@ -2733,6 +2861,7 @@
     {
       "id": "law-haz-129",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "鉛則",
         "金属"
@@ -2752,6 +2881,7 @@
     {
       "id": "law-haz-130",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "特殊健康診断"
@@ -2771,6 +2901,7 @@
     {
       "id": "law-haz-131",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特殊健康診断",
         "健康管理"
@@ -2790,6 +2921,7 @@
     {
       "id": "law-haz-132",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -2809,6 +2941,7 @@
     {
       "id": "law-haz-133",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "作業主任者"
@@ -2828,6 +2961,7 @@
     {
       "id": "law-haz-134",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特別教育"
@@ -2847,6 +2981,7 @@
     {
       "id": "law-haz-135",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "金属"
@@ -2866,6 +3001,7 @@
     {
       "id": "law-haz-136",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "リスクアセスメント"
@@ -2885,6 +3021,7 @@
     {
       "id": "law-haz-137",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "リスクアセスメント"
@@ -2904,6 +3041,7 @@
     {
       "id": "law-haz-138",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "保護具"
@@ -2923,6 +3061,7 @@
     {
       "id": "law-haz-139",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "安衛則",
         "作業環境管理"
@@ -2942,6 +3081,7 @@
     {
       "id": "law-haz-140",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -2961,6 +3101,7 @@
     {
       "id": "law-haz-141",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -2980,6 +3121,7 @@
     {
       "id": "law-haz-142",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "じん肺"
@@ -2999,6 +3141,7 @@
     {
       "id": "law-haz-143",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -3018,6 +3161,7 @@
     {
       "id": "law-haz-144",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "有害物質"
@@ -3037,6 +3181,7 @@
     {
       "id": "law-haz-145",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "作業環境管理"
@@ -3056,6 +3201,7 @@
     {
       "id": "law-haz-146",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "特殊健康診断",
         "健康管理"
@@ -3075,6 +3221,7 @@
     {
       "id": "law-haz-147",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "騒音"
@@ -3094,6 +3241,7 @@
     {
       "id": "law-haz-148",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "温熱条件"
@@ -3113,6 +3261,7 @@
     {
       "id": "law-haz-149",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -3132,6 +3281,7 @@
     {
       "id": "law-haz-150",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "作業環境管理"
@@ -3151,6 +3301,7 @@
     {
       "id": "law-haz-151",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -3170,6 +3321,7 @@
     {
       "id": "law-haz-152",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "作業主任者"
@@ -3189,6 +3341,7 @@
     {
       "id": "law-haz-153",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "保護具"
@@ -3208,6 +3361,7 @@
     {
       "id": "law-haz-154",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "作業環境管理"
@@ -3227,6 +3381,7 @@
     {
       "id": "law-haz-155",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "粉じん則"
@@ -3246,6 +3401,7 @@
     {
       "id": "law-haz-156",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生管理体制"
@@ -3265,6 +3421,7 @@
     {
       "id": "law-haz-157",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "産業医"
@@ -3284,6 +3441,7 @@
     {
       "id": "law-haz-158",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -3303,6 +3461,7 @@
     {
       "id": "law-haz-159",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -3322,6 +3481,7 @@
     {
       "id": "law-haz-160",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "作業環境管理"
@@ -3341,6 +3501,7 @@
     {
       "id": "law-haz-161",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "鉛則",
         "金属"
@@ -3360,6 +3521,7 @@
     {
       "id": "law-haz-162",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "石綿則",
         "石綿"
@@ -3379,6 +3541,7 @@
     {
       "id": "law-haz-163",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "石綿則",
         "石綿"
@@ -3398,6 +3561,7 @@
     {
       "id": "law-haz-164",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "粉じん"
@@ -3417,6 +3581,7 @@
     {
       "id": "law-haz-165",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "特殊健康診断"
@@ -3436,6 +3601,7 @@
     {
       "id": "law-haz-166",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "作業主任者"
@@ -3455,6 +3621,7 @@
     {
       "id": "law-haz-167",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "じん肺"
@@ -3474,6 +3641,7 @@
     {
       "id": "law-haz-168",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "女性則",
         "労基法"
@@ -3493,6 +3661,7 @@
     {
       "id": "law-haz-169",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "労基法",
         "年少者"
@@ -3512,6 +3681,7 @@
     {
       "id": "law-haz-170",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造禁止物質"
@@ -3531,6 +3701,7 @@
     {
       "id": "law-haz-171",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "リスクアセスメント"
@@ -3550,6 +3721,7 @@
     {
       "id": "law-haz-172",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "健康管理"
@@ -3569,6 +3741,7 @@
     {
       "id": "law-haz-173",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "健康管理"
@@ -3588,6 +3761,7 @@
     {
       "id": "law-haz-174",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "保護具"
@@ -3607,6 +3781,7 @@
     {
       "id": "law-haz-175",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "安衛法",
         "保護具"
@@ -3626,6 +3801,7 @@
     {
       "id": "law-haz-176",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "有害物質"
@@ -3645,6 +3821,7 @@
     {
       "id": "law-haz-177",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "リスクアセスメント"
@@ -3664,6 +3841,7 @@
     {
       "id": "law-haz-178",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康管理手帳"
@@ -3683,6 +3861,7 @@
     {
       "id": "law-haz-179",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -3702,6 +3881,7 @@
     {
       "id": "law-haz-180",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "有機則",
         "作業環境管理"
@@ -3721,6 +3901,7 @@
     {
       "id": "law-haz-181",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "酸素欠乏"
@@ -3740,6 +3921,7 @@
     {
       "id": "law-haz-182",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "高圧則",
         "減圧症"
@@ -3759,6 +3941,7 @@
     {
       "id": "law-haz-183",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "安衛則",
         "作業環境管理"
@@ -3778,6 +3961,7 @@
     {
       "id": "law-haz-184",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "有害物質"
@@ -3797,6 +3981,7 @@
     {
       "id": "law-haz-185",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "有機溶剤"
@@ -3816,6 +4001,7 @@
     {
       "id": "law-haz-186",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造許可物質"
@@ -3835,6 +4021,7 @@
     {
       "id": "law-haz-187",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "譲渡制限",
@@ -3855,6 +4042,7 @@
     {
       "id": "law-haz-188",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -3874,6 +4062,7 @@
     {
       "id": "law-haz-189",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "作業環境測定",
         "作業環境管理"
@@ -3893,6 +4082,7 @@
     {
       "id": "law-haz-190",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特殊健康診断",
         "健康管理"
@@ -3912,6 +4102,7 @@
     {
       "id": "law-haz-191",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "騒音"
@@ -3931,6 +4122,7 @@
     {
       "id": "law-haz-192",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "振動障害"
@@ -3950,6 +4142,7 @@
     {
       "id": "law-haz-193",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "特化則"
@@ -3969,6 +4162,7 @@
     {
       "id": "law-haz-194",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "保護具"
@@ -3988,6 +4182,7 @@
     {
       "id": "law-haz-195",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "有害物質"
@@ -4007,6 +4202,7 @@
     {
       "id": "law-haz-196",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -4026,6 +4222,7 @@
     {
       "id": "law-haz-197",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "じん肺"
@@ -4045,6 +4242,7 @@
     {
       "id": "law-haz-198",
       "category": "law_hazardous",
+      "difficulty": "easy",
       "tags": [
         "特殊健康診断",
         "健康管理"
@@ -4064,6 +4262,7 @@
     {
       "id": "law-haz-199",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生管理体制"
@@ -4083,6 +4282,7 @@
     {
       "id": "law-haz-200",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "作業環境管理"
@@ -4102,6 +4302,7 @@
     {
       "id": "law-haz-201",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "作業主任者"
@@ -4135,6 +4336,7 @@
     {
       "id": "law-haz-202",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "電離則",
         "健康診断"
@@ -4164,6 +4366,7 @@
     {
       "id": "law-haz-203",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "作業主任者"
@@ -4193,6 +4396,7 @@
     {
       "id": "law-haz-204",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "石綿則",
         "健康診断"
@@ -4212,6 +4416,7 @@
     {
       "id": "law-haz-205",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "局所排気装置"
@@ -4231,6 +4436,7 @@
     {
       "id": "law-haz-206",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "有機則",
         "作業環境測定"
@@ -4256,6 +4462,7 @@
     {
       "id": "law-haz-207",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特別管理物質"
@@ -4281,6 +4488,7 @@
     {
       "id": "law-haz-208",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "製造禁止"
@@ -4306,6 +4514,7 @@
     {
       "id": "law-haz-209",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造許可"
@@ -4331,6 +4540,7 @@
     {
       "id": "law-haz-210",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -4350,6 +4560,7 @@
     {
       "id": "law-haz-211",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "譲渡制限"
@@ -4379,6 +4590,7 @@
     {
       "id": "law-haz-212",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "局所排気装置"
@@ -4404,6 +4616,7 @@
     {
       "id": "law-haz-213",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "じん肺法",
         "健康診断"
@@ -4429,6 +4642,7 @@
     {
       "id": "law-haz-214",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生管理体制"
@@ -4448,6 +4662,7 @@
     {
       "id": "law-haz-215",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "衛生管理者"
@@ -4473,6 +4688,7 @@
     {
       "id": "law-haz-216",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "労基法",
         "女性則"
@@ -4502,6 +4718,7 @@
     {
       "id": "law-haz-217",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "健康診断"
@@ -4521,6 +4738,7 @@
     {
       "id": "law-haz-218",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "事務所則",
         "作業環境測定"
@@ -4546,6 +4764,7 @@
     {
       "id": "law-haz-219",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "作業環境測定"
@@ -4571,6 +4790,7 @@
     {
       "id": "law-haz-220",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "定期自主検査"
@@ -4596,6 +4816,7 @@
     {
       "id": "law-haz-221",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "局所排気装置"
@@ -4625,6 +4846,7 @@
     {
       "id": "law-haz-222",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "作業環境測定"
@@ -4650,6 +4872,7 @@
     {
       "id": "law-haz-223",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "健康診断"
@@ -4669,6 +4892,7 @@
     {
       "id": "law-haz-224",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "リスクアセスメント"
@@ -4694,6 +4918,7 @@
     {
       "id": "law-haz-225",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "特定化学物質"
@@ -4713,6 +4938,7 @@
     {
       "id": "law-haz-226",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生委員会"
@@ -4738,6 +4964,7 @@
     {
       "id": "law-haz-227",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "健康診断"
@@ -4757,6 +4984,7 @@
     {
       "id": "law-haz-228",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -4782,6 +5010,7 @@
     {
       "id": "law-haz-229",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康管理手帳"
@@ -4807,6 +5036,7 @@
     {
       "id": "law-haz-230",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特定化学物質"
@@ -4832,6 +5062,7 @@
     {
       "id": "law-haz-231",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "作業環境測定"
@@ -4851,6 +5082,7 @@
     {
       "id": "law-haz-232",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "ばく露防止"
@@ -4876,6 +5108,7 @@
     {
       "id": "law-haz-233",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "作業主任者"
@@ -4895,6 +5128,7 @@
     {
       "id": "law-haz-234",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -4914,6 +5148,7 @@
     {
       "id": "law-haz-235",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "健康診断"
@@ -4943,6 +5178,7 @@
     {
       "id": "law-haz-236",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生管理体制"
@@ -4962,6 +5198,7 @@
     {
       "id": "law-haz-237",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "作業環境測定"
@@ -4987,6 +5224,7 @@
     {
       "id": "law-haz-238",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -5006,6 +5244,7 @@
     {
       "id": "law-haz-239",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "表示・通知"
@@ -5031,6 +5270,7 @@
     {
       "id": "law-haz-240",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "特別教育"
@@ -5056,6 +5296,7 @@
     {
       "id": "law-haz-241",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "鉛則",
         "作業環境測定"
@@ -5075,6 +5316,7 @@
     {
       "id": "law-haz-242",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康診断"
@@ -5094,6 +5336,7 @@
     {
       "id": "law-haz-243",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "作業環境測定"
@@ -5119,6 +5362,7 @@
     {
       "id": "law-haz-244",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "再圧室"
@@ -5144,6 +5388,7 @@
     {
       "id": "law-haz-245",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "局所排気装置"
@@ -5163,6 +5408,7 @@
     {
       "id": "law-haz-246",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "譲渡制限"
@@ -5182,6 +5428,7 @@
     {
       "id": "law-haz-247",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "健康診断"
@@ -5201,6 +5448,7 @@
     {
       "id": "law-haz-248",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "作業主任者"
@@ -5220,6 +5468,7 @@
     {
       "id": "law-haz-249",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特別管理物質"
@@ -5239,6 +5488,7 @@
     {
       "id": "law-haz-250",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -5258,6 +5508,7 @@
     {
       "id": "law-haz-251",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "健康管理"
@@ -5283,6 +5534,7 @@
     {
       "id": "law-haz-252",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "面接指導"
@@ -5308,6 +5560,7 @@
     {
       "id": "law-haz-253",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "貯蔵・空容器"
@@ -5327,6 +5580,7 @@
     {
       "id": "law-haz-254",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -5352,6 +5606,7 @@
     {
       "id": "law-haz-255",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "作業環境測定"
@@ -5371,6 +5626,7 @@
     {
       "id": "law-haz-256",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "ばく露防止"
@@ -5390,6 +5646,7 @@
     {
       "id": "law-haz-257",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "送気・潜水"
@@ -5415,6 +5672,7 @@
     {
       "id": "law-haz-258",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "定期自主検査"
@@ -5434,6 +5692,7 @@
     {
       "id": "law-haz-259",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -5453,6 +5712,7 @@
     {
       "id": "law-haz-260",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "緊急時"
@@ -5472,6 +5732,7 @@
     {
       "id": "law-haz-261",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "四アルキル鉛則",
         "作業主任者"
@@ -5497,6 +5758,7 @@
     {
       "id": "law-haz-262",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生教育"
@@ -5516,6 +5778,7 @@
     {
       "id": "law-haz-263",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康診断結果報告"
@@ -5535,6 +5798,7 @@
     {
       "id": "law-haz-264",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造許可"
@@ -5554,6 +5818,7 @@
     {
       "id": "law-haz-265",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "立入禁止"
@@ -5573,6 +5838,7 @@
     {
       "id": "law-haz-266",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "容器表示"
@@ -5598,6 +5864,7 @@
     {
       "id": "law-haz-267",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生推進者"
@@ -5617,6 +5884,7 @@
     {
       "id": "law-haz-268",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "作業環境"
@@ -5636,6 +5904,7 @@
     {
       "id": "law-haz-269",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "排出・廃棄"
@@ -5661,6 +5930,7 @@
     {
       "id": "law-haz-270",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "健康診断"
@@ -5680,6 +5950,7 @@
     {
       "id": "law-haz-271",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "騒音"
@@ -5705,6 +5976,7 @@
     {
       "id": "law-haz-272",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "区分・色分け"
@@ -5730,6 +6002,7 @@
     {
       "id": "law-haz-273",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "ばく露低減措置"
@@ -5749,6 +6022,7 @@
     {
       "id": "law-haz-274",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "特別教育"
@@ -5768,6 +6042,7 @@
     {
       "id": "law-haz-275",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "報告"
@@ -5787,6 +6062,7 @@
     {
       "id": "law-haz-276",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -5806,6 +6082,7 @@
     {
       "id": "law-haz-277",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "特化則",
         "作業環境測定"
@@ -5825,6 +6102,7 @@
     {
       "id": "law-haz-278",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "休憩・清潔"
@@ -5844,6 +6122,7 @@
     {
       "id": "law-haz-279",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "産業医"
@@ -5863,6 +6142,7 @@
     {
       "id": "law-haz-280",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "ガス・蒸気の発散"
@@ -5882,6 +6162,7 @@
     {
       "id": "law-haz-281",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "化学物質管理者"
@@ -5907,6 +6188,7 @@
     {
       "id": "law-haz-282",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "保護具着用管理責任者"
@@ -5926,6 +6208,7 @@
     {
       "id": "law-haz-283",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "第三類物質"
@@ -5945,6 +6228,7 @@
     {
       "id": "law-haz-284",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造禁止物質"
@@ -5964,6 +6248,7 @@
     {
       "id": "law-haz-285",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "管理区分"
@@ -5983,6 +6268,7 @@
     {
       "id": "law-haz-286",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "線量限度"
@@ -6002,6 +6288,7 @@
     {
       "id": "law-haz-287",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "タンク内作業"
@@ -6021,6 +6308,7 @@
     {
       "id": "law-haz-288",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "安全衛生管理体制"
@@ -6040,6 +6328,7 @@
     {
       "id": "law-haz-289",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "救急・退避"
@@ -6059,6 +6348,7 @@
     {
       "id": "law-haz-290",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "局所排気装置"
@@ -6084,6 +6374,7 @@
     {
       "id": "law-haz-291",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "情報・掲示"
@@ -6103,6 +6394,7 @@
     {
       "id": "law-haz-292",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "労基法",
         "年少者"
@@ -6122,6 +6414,7 @@
     {
       "id": "law-haz-293",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "女性則",
         "重量物"
@@ -6141,6 +6434,7 @@
     {
       "id": "law-haz-294",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "定期自主検査"
@@ -6160,6 +6454,7 @@
     {
       "id": "law-haz-295",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業環境測定"
@@ -6179,6 +6474,7 @@
     {
       "id": "law-haz-296",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -6198,6 +6494,7 @@
     {
       "id": "law-haz-297",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "健康診断"
@@ -6217,6 +6514,7 @@
     {
       "id": "law-haz-298",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "派遣労働者"
@@ -6236,6 +6534,7 @@
     {
       "id": "law-haz-299",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "呼吸用保護具"
@@ -6255,6 +6554,7 @@
     {
       "id": "law-haz-300",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "総合"
@@ -6274,6 +6574,7 @@
     {
       "id": "law-haz-301",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "有機則",
         "局所排気装置"
@@ -6303,6 +6604,7 @@
     {
       "id": "law-haz-302",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -6322,6 +6624,7 @@
     {
       "id": "law-haz-303",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "健康管理"
@@ -6351,6 +6654,7 @@
     {
       "id": "law-haz-304",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "作業環境測定"
@@ -6370,6 +6674,7 @@
     {
       "id": "law-haz-305",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "酸欠則",
         "作業環境測定"
@@ -6389,6 +6694,7 @@
     {
       "id": "law-haz-306",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "健康診断"
@@ -6408,6 +6714,7 @@
     {
       "id": "law-haz-307",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "石綿則",
         "作業環境管理"
@@ -6433,6 +6740,7 @@
     {
       "id": "law-haz-308",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "局所排気装置"
@@ -6452,6 +6760,7 @@
     {
       "id": "law-haz-309",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "鉛則",
         "作業環境測定"
@@ -6471,6 +6780,7 @@
     {
       "id": "law-haz-310",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特別管理物質"
@@ -6490,6 +6800,7 @@
     {
       "id": "law-haz-311",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "衛生管理者"
@@ -6509,6 +6820,7 @@
     {
       "id": "law-haz-312",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "女性則",
         "労基法"
@@ -6534,6 +6846,7 @@
     {
       "id": "law-haz-313",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "事務所則",
         "作業環境管理"
@@ -6559,6 +6872,7 @@
     {
       "id": "law-haz-314",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "表示・通知"
@@ -6584,6 +6898,7 @@
     {
       "id": "law-haz-315",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "譲渡制限"
@@ -6603,6 +6918,7 @@
     {
       "id": "law-haz-316",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -6622,6 +6938,7 @@
     {
       "id": "law-haz-317",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康管理手帳"
@@ -6641,6 +6958,7 @@
     {
       "id": "law-haz-318",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "ばく露防止"
@@ -6660,6 +6978,7 @@
     {
       "id": "law-haz-319",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -6679,6 +6998,7 @@
     {
       "id": "law-haz-320",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "健康診断"
@@ -6698,6 +7018,7 @@
     {
       "id": "law-haz-321",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "作業環境測定"
@@ -6717,6 +7038,7 @@
     {
       "id": "law-haz-322",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "製造許可"
@@ -6736,6 +7058,7 @@
     {
       "id": "law-haz-323",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生教育"
@@ -6755,6 +7078,7 @@
     {
       "id": "law-haz-324",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "産業医"
@@ -6774,6 +7098,7 @@
     {
       "id": "law-haz-325",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "高圧則",
         "再圧室"
@@ -6799,6 +7124,7 @@
     {
       "id": "law-haz-326",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "定期自主検査"
@@ -6818,6 +7144,7 @@
     {
       "id": "law-haz-327",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "特別教育"
@@ -6843,6 +7170,7 @@
     {
       "id": "law-haz-328",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "じん肺法",
         "健康診断"
@@ -6862,6 +7190,7 @@
     {
       "id": "law-haz-329",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "作業主任者"
@@ -6881,6 +7210,7 @@
     {
       "id": "law-haz-330",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "酸欠則",
         "作業主任者"
@@ -6910,6 +7240,7 @@
     {
       "id": "law-haz-331",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "石綿則",
         "事前調査"
@@ -6935,6 +7266,7 @@
     {
       "id": "law-haz-332",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "粉じん則",
         "呼吸用保護具"
@@ -6954,6 +7286,7 @@
     {
       "id": "law-haz-333",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "製造禁止"
@@ -6979,6 +7312,7 @@
     {
       "id": "law-haz-334",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "排出・廃棄"
@@ -7004,6 +7338,7 @@
     {
       "id": "law-haz-335",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "安全衛生管理体制"
@@ -7023,6 +7358,7 @@
     {
       "id": "law-haz-336",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "電離則",
         "線量限度"
@@ -7042,6 +7378,7 @@
     {
       "id": "law-haz-337",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "有機則",
         "タンク内作業"
@@ -7061,6 +7398,7 @@
     {
       "id": "law-haz-338",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康診断"
@@ -7080,6 +7418,7 @@
     {
       "id": "law-haz-339",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "面接指導"
@@ -7099,6 +7438,7 @@
     {
       "id": "law-haz-340",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "譲渡制限"
@@ -7118,6 +7458,7 @@
     {
       "id": "law-haz-341",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "化学物質管理者"
@@ -7143,6 +7484,7 @@
     {
       "id": "law-haz-342",
       "category": "law_hazardous",
+      "difficulty": "hard",
       "tags": [
         "安衛法",
         "計画の届出"
@@ -7162,6 +7504,7 @@
     {
       "id": "law-haz-343",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "労基法",
         "年少者"
@@ -7181,6 +7524,7 @@
     {
       "id": "law-haz-344",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "事務所則",
         "作業環境管理"
@@ -7200,6 +7544,7 @@
     {
       "id": "law-haz-345",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "リスクアセスメント"
@@ -7219,6 +7564,7 @@
     {
       "id": "law-haz-346",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛則",
         "作業環境測定"
@@ -7244,6 +7590,7 @@
     {
       "id": "law-haz-347",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "鉛則",
         "四アルキル鉛則"
@@ -7269,6 +7616,7 @@
     {
       "id": "law-haz-348",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "健康管理手帳"
@@ -7288,6 +7636,7 @@
     {
       "id": "law-haz-349",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "特化則",
         "特別管理物質"
@@ -7307,6 +7656,7 @@
     {
       "id": "law-haz-350",
       "category": "law_hazardous",
+      "difficulty": "standard",
       "tags": [
         "安衛法",
         "総合"

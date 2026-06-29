@@ -4,6 +4,7 @@
     {
       "id": "phys-001",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "循環器",
         "血液"
@@ -23,6 +24,7 @@
     {
       "id": "phys-002",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "循環器"
       ],
@@ -41,6 +43,7 @@
     {
       "id": "phys-003",
       "category": "physiology",
+      "difficulty": "easy",
       "tags": [
         "循環器"
       ],
@@ -59,6 +62,7 @@
     {
       "id": "phys-004",
       "category": "physiology",
+      "difficulty": "easy",
       "tags": [
         "血液"
       ],
@@ -77,6 +81,7 @@
     {
       "id": "phys-005",
       "category": "physiology",
+      "difficulty": "hard",
       "tags": [
         "血液"
       ],
@@ -95,6 +100,7 @@
     {
       "id": "phys-006",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "血液"
       ],
@@ -113,6 +119,7 @@
     {
       "id": "phys-007",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "呼吸器"
       ],
@@ -131,6 +138,7 @@
     {
       "id": "phys-008",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "呼吸器"
       ],
@@ -149,6 +157,7 @@
     {
       "id": "phys-009",
       "category": "physiology",
+      "difficulty": "easy",
       "tags": [
         "消化器",
         "代謝"
@@ -168,6 +177,7 @@
     {
       "id": "phys-010",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "消化器"
       ],
@@ -186,6 +196,7 @@
     {
       "id": "phys-011",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "消化器",
         "代謝"
@@ -205,6 +216,7 @@
     {
       "id": "phys-012",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "腎臓・泌尿器"
       ],
@@ -223,6 +235,7 @@
     {
       "id": "phys-013",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "神経系"
       ],
@@ -241,6 +254,7 @@
     {
       "id": "phys-014",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "神経系"
       ],
@@ -259,6 +273,7 @@
     {
       "id": "phys-015",
       "category": "physiology",
+      "difficulty": "hard",
       "tags": [
         "神経系"
       ],
@@ -277,6 +292,7 @@
     {
       "id": "phys-016",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "筋肉"
       ],
@@ -295,6 +311,7 @@
     {
       "id": "phys-017",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "筋肉"
       ],
@@ -313,6 +330,7 @@
     {
       "id": "phys-018",
       "category": "physiology",
+      "difficulty": "hard",
       "tags": [
         "筋肉"
       ],
@@ -331,6 +349,7 @@
     {
       "id": "phys-019",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "感覚器"
       ],
@@ -349,6 +368,7 @@
     {
       "id": "phys-020",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "感覚器"
       ],
@@ -367,6 +387,7 @@
     {
       "id": "phys-021",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "感覚器"
       ],
@@ -385,6 +406,7 @@
     {
       "id": "phys-022",
       "category": "physiology",
+      "difficulty": "hard",
       "tags": [
         "内分泌"
       ],
@@ -403,6 +425,7 @@
     {
       "id": "phys-023",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "代謝"
       ],
@@ -421,6 +444,7 @@
     {
       "id": "phys-024",
       "category": "physiology",
+      "difficulty": "hard",
       "tags": [
         "代謝"
       ],
@@ -439,6 +463,7 @@
     {
       "id": "phys-025",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "体温調節"
       ],
@@ -457,6 +482,7 @@
     {
       "id": "phys-026",
       "category": "physiology",
+      "difficulty": "easy",
       "tags": [
         "ストレス"
       ],
@@ -475,6 +501,7 @@
     {
       "id": "phys-027",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "代謝",
         "睡眠"
@@ -494,6 +521,7 @@
     {
       "id": "phys-028",
       "category": "physiology",
+      "difficulty": "easy",
       "tags": [
         "代謝",
         "疲労"
@@ -513,6 +541,7 @@
     {
       "id": "phys-029",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "血液",
         "免疫"
@@ -532,6 +561,7 @@
     {
       "id": "phys-030",
       "category": "physiology",
+      "difficulty": "standard",
       "tags": [
         "代謝",
         "腎臓・泌尿器"

@@ -27,7 +27,7 @@ python3 -m http.server 8000
 node scripts/validate-questions.mjs
 ```
 
-JSON のパース、必須フィールド、`answerIndex` の範囲、選択肢が5つか、`id` の一意性、`category` とファイル名の一致、`columns` の構造などを検査する。エラーがあれば終了コード 1 で失敗する。この検証は GitHub Actions（`.github/workflows/validate.yml`）で Pull Request と `main` への push のたびに自動実行する。
+JSON のパース、必須フィールド、`answerIndex` の範囲、選択肢が5つか、`id` の一意性、`category` とファイル名の一致、`difficulty` の列挙値、`columns` の構造などを検査する。エラーがあれば終了コード 1 で失敗する。この検証は GitHub Actions（`.github/workflows/validate.yml`）で Pull Request と `main` への push のたびに自動実行する。
 
 ## デプロイ（GitHub Pages）
 
@@ -56,6 +56,7 @@ data/
 {
   "id": "law-haz-007",
   "category": "law_hazardous",
+  "difficulty": "standard",
   "tags": ["安衛法", "作業主任者"],
   "question": "設問文（五肢択一）。",
   "choices": ["選択肢1", "選択肢2", "選択肢3", "選択肢4", "選択肢5"],
@@ -72,6 +73,7 @@ data/
 |------------|------|
 | `id` | 一意なID。`law-haz-xxx`（有害業務) / `law-gen-xxx`（有害業務以外）の連番。**既存IDは変更しない**（学習履歴の紐付けが切れるため) |
 | `category` | `law_hazardous` または `law_general` |
+| `difficulty` | **必須**。難易度を `"hard"`（難＝過去問より難しい) / `"standard"`（並＝過去問相当) / `"easy"`（易＝過去問より簡単）のいずれかで持つ。学習状況画面で難易度別正答率の集計に用いる。分類方針は [CLAUDE.md](CLAUDE.md) の「難易度」に定める |
 | `tags` | 法令名などの配列（任意) |
 | `question` | 設問文 |
 | `choices` | 選択肢の配列（通常5つ。組合せ問題は組合せ文を選択肢に書く) |
