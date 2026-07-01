@@ -27,6 +27,29 @@ export function migrateAnswers(answers) {
   return out;
 }
 
+// 2 つの回答マップ（例: ローカルとリモート）を問題 id ごとにマージする純関数。
+// 片方にしか存在しない id はそれを採用し、両方に存在する id は updatedAt が
+// 新しい方を採用する。これにより端末ごとに別々の問題を解いた場合でも双方の
+// 更新が残り、全体上書き（LWW）による消失を防ぐ。
+// - updatedAt は ISO 8601 UTC 文字列のため、辞書順比較が時系列比較に一致する。
+// - attempts は合算せず、採用した側（勝者）の値をそのまま用いる。
+// - updatedAt が同時刻のときは第 1 引数側を優先する。
+// 両引数は migrateAnswers で正規化するため、欠損は EPOCH として扱われる。
+export function mergeAnswers(a, b) {
+  const left = migrateAnswers(a);
+  const right = migrateAnswers(b);
+  const out = {};
+  const ids = new Set([...Object.keys(left), ...Object.keys(right)]);
+  for (const id of ids) {
+    const l = left[id];
+    const r = right[id];
+    if (!r) { out[id] = l; continue; }
+    if (!l) { out[id] = r; continue; }
+    out[id] = r.updatedAt > l.updatedAt ? r : l;
+  }
+  return out;
+}
+
 export function load() {
   try {
     const raw = localStorage.getItem(KEY);
