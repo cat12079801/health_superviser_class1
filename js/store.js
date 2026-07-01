@@ -88,6 +88,12 @@ export function reset() {
   save(emptyState());
 }
 
+// 回答マップ全体を置き換えて保存する。同期のマージ結果を localStorage へ
+// 反映する用途に使う。渡された値は migrateAnswers で正規化する。
+export function replaceAnswers(answers) {
+  save({ answers: migrateAnswers(answers), updatedAt: null });
+}
+
 // 難易度の正準キー。表示順もこの順とする
 export const DIFFICULTIES = ["hard", "standard", "easy"];
 // 難易度キー -> 表示ラベル
