@@ -4,6 +4,9 @@ import {
   record,
   reset,
   summarize,
+  getAnswers,
+  replaceAnswers,
+  mergeAnswers,
   DIFFICULTIES,
   DIFFICULTY_LABEL,
 } from "./store.js";
@@ -14,6 +17,7 @@ import {
   countQuestions,
   judge,
 } from "./quiz.js";
+import * as sync from "./sync.js";
 
 const $ = (sel) => document.querySelector(sel);
 const views = {
@@ -31,11 +35,19 @@ let index = 0;
 let selected = null;
 let answeredCurrent = false;
 
+let currentView = "home";
 function show(name) {
+  currentView = name;
   for (const [key, el] of Object.entries(views)) {
     el.classList.toggle("hidden", key !== name);
   }
   window.scrollTo(0, 0);
+}
+
+// 表示中のビューを再描画する。出題中は回答操作を妨げないため再描画しない。
+function refreshCurrentView() {
+  if (currentView === "home") renderHome();
+  else if (currentView === "stats") renderStats();
 }
 
 /* ---------- ホーム ---------- */
@@ -161,6 +173,11 @@ function submitAnswer() {
   const q = quizSet[index];
   const correct = judge(q, selected);
   record(q.id, selected, correct);
+  // ログイン中はこの1問をリモートへも反映する（ベストエフォート。失敗は #26 で扱う）
+  if (sync.getUser()) {
+    const a = getAnswers()[q.id];
+    sync.pushOne(q.id, a).catch(() => {});
+  }
 
   const ol = $("#q-choices");
   ol.classList.add("locked");
@@ -273,12 +290,72 @@ function bind() {
   $("#stats-back").addEventListener("click", renderHome);
   $("#q-submit").addEventListener("click", submitAnswer);
   $("#q-next").addEventListener("click", nextQuestion);
-  $("#reset-progress").addEventListener("click", () => {
-    if (confirm("この端末の回答履歴をすべて消去します。よろしいですか？")) {
-      reset();
-      renderStats();
+  $("#reset-progress").addEventListener("click", async () => {
+    if (!confirm("この端末の回答履歴をすべて消去します。よろしいですか？")) return;
+    reset();
+    // ログイン中はリモートの自ユーザ行も削除する
+    if (sync.getUser()) {
+      try {
+        await sync.clearRemote();
+      } catch {
+        /* 失敗してもローカルはリセット済み。#26 で再同期を扱う */
+      }
+    }
+    renderStats();
+  });
+
+  // ログイン / ログアウト
+  $("#login-btn").addEventListener("click", () => {
+    sync.signIn().catch(() => {});
+  });
+  $("#logout-btn").addEventListener("click", () => {
+    sync.signOut().catch(() => {});
+  });
+
+  // フォアグラウンド復帰時、ログイン中なら再同期する
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && sync.getUser()) {
+      setTimeout(syncFromRemote, 0);
     }
   });
+}
+
+/* ---------- 認証・同期 ---------- */
+// 認証状態に応じてヘッダの表示を切り替える。
+function renderAuth(user) {
+  if (!sync.isConfigured()) {
+    $("#auth").hidden = true;
+    return;
+  }
+  $("#auth").hidden = false;
+  $("#login-btn").hidden = !!user;
+  $("#logout-btn").hidden = !user;
+  const userEl = $("#auth-user");
+  userEl.hidden = !user;
+  if (user) {
+    userEl.textContent = user.email || user.user_metadata?.name || "ログイン中";
+  }
+}
+
+// 認証状態が変化したときの処理。ログイン時はリモートと初回マージする。
+function onAuthChange(user) {
+  renderAuth(user);
+  // auth コールバック内で Supabase を呼ぶとデッドロックしうるため遅延実行する
+  if (user) setTimeout(syncFromRemote, 0);
+}
+
+// リモートの進捗をローカルと問題単位でマージし、双方へ書き戻す。
+async function syncFromRemote() {
+  if (!sync.getUser()) return;
+  try {
+    const remote = await sync.pullRemote();
+    const merged = mergeAnswers(getAnswers(), remote);
+    replaceAnswers(merged);
+    await sync.pushAll(merged); // ローカルにしかない回答をリモートへも反映する
+    refreshCurrentView();
+  } catch {
+    /* ベストエフォート。通信失敗時はローカルのまま継続する（#26 で再同期） */
+  }
 }
 
 /* ---------- 問題の更新 ---------- */
@@ -328,6 +405,9 @@ async function init() {
   renderCategoryMenu();
   bind(); // カテゴリ別ボタン生成後に bind し、生成ボタンにも click を付与する
   renderHome();
+  // 認証を初期化する。未設定・失敗時は onAuthChange(null) が呼ばれ、
+  // 同期 UI は隠れたままローカルのみで動作する。
+  sync.initAuth(onAuthChange).catch(() => renderAuth(null));
 }
 
 init();
