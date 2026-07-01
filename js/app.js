@@ -173,10 +173,18 @@ function submitAnswer() {
   const q = quizSet[index];
   const correct = judge(q, selected);
   record(q.id, selected, correct);
-  // ログイン中はこの1問をリモートへも反映する（ベストエフォート。失敗は #26 で扱う）
+  // ログイン中はこの1問をリモートへも反映する。失敗時は未反映フラグを立て、
+  // オンライン復帰・フォアグラウンド復帰時の再同期（pushAll）で解消する。
   if (sync.getUser()) {
     const a = getAnswers()[q.id];
-    sync.pushOne(q.id, a).catch(() => {});
+    sync.pushOne(q.id, a)
+      .then(() => {
+        if (!syncDirty) setSyncStatus("synced");
+      })
+      .catch(() => {
+        syncDirty = true;
+        setSyncStatus(navigator.onLine ? "error" : "offline");
+      });
   }
 
   const ol = $("#q-choices");
@@ -297,8 +305,11 @@ function bind() {
     if (sync.getUser()) {
       try {
         await sync.clearRemote();
+        setSyncStatus("synced");
       } catch {
-        /* 失敗してもローカルはリセット済み。#26 で再同期を扱う */
+        // 失敗してもローカルはリセット済み。空の状態を再同期対象として印を付ける
+        syncDirty = true;
+        setSyncStatus(navigator.onLine ? "error" : "offline");
       }
     }
     renderStats();
@@ -318,6 +329,15 @@ function bind() {
       setTimeout(syncFromRemote, 0);
     }
   });
+
+  // オンライン復帰時に再同期し、未反映の回答を解消する
+  window.addEventListener("online", () => {
+    if (sync.getUser()) setTimeout(syncFromRemote, 0);
+  });
+  // オフライン化を検知したら表示に反映する
+  window.addEventListener("offline", () => {
+    if (sync.getUser()) setSyncStatus("offline");
+  });
 }
 
 /* ---------- 認証・同期 ---------- */
@@ -334,6 +354,9 @@ function renderAuth(user) {
   userEl.hidden = !user;
   if (user) {
     userEl.textContent = user.email || user.user_metadata?.name || "ログイン中";
+  } else {
+    // ログアウト時は同期ステータスを消す
+    $("#sync-status").hidden = true;
   }
 }
 
@@ -344,17 +367,51 @@ function onAuthChange(user) {
   if (user) setTimeout(syncFromRemote, 0);
 }
 
+// 同期状態の表示。正常時は何も出さず、問題のある状態のみ表示する。
+// syncDirty: リモートへ未反映のローカル変更があるか（復帰時に再同期して解消する）。
+let syncDirty = false;
+let syncing = false;
+function setSyncStatus(state) {
+  const el = $("#sync-status");
+  if (!sync.getUser()) {
+    el.hidden = true;
+    return;
+  }
+  const text = {
+    syncing: "同期中…",
+    synced: "",
+    offline: "オフライン（後で同期する）",
+    error: "同期できない（自動で再試行する）",
+  }[state] || "";
+  el.textContent = text;
+  el.hidden = text === "";
+  el.className = "sync-status" + (state === "error" ? " ng" : "");
+}
+
 // リモートの進捗をローカルと問題単位でマージし、双方へ書き戻す。
+// 多重起動（ログイン・復帰・オンライン復帰の重複）を避け、通信失敗時も
+// ローカルで継続する。pushAll は全回答を送るため、未反映の1問も併せて解消する。
 async function syncFromRemote() {
-  if (!sync.getUser()) return;
+  if (!sync.getUser() || syncing) return;
+  if (!navigator.onLine) {
+    setSyncStatus("offline");
+    return;
+  }
+  syncing = true;
+  setSyncStatus("syncing");
   try {
     const remote = await sync.pullRemote();
     const merged = mergeAnswers(getAnswers(), remote);
     replaceAnswers(merged);
     await sync.pushAll(merged); // ローカルにしかない回答をリモートへも反映する
+    syncDirty = false;
+    setSyncStatus("synced");
     refreshCurrentView();
   } catch {
-    /* ベストエフォート。通信失敗時はローカルのまま継続する（#26 で再同期） */
+    // 通信失敗・一時停止（無料枠）等。ローカルのまま継続し、復帰時に再同期する
+    setSyncStatus(navigator.onLine ? "error" : "offline");
+  } finally {
+    syncing = false;
   }
 }
 
@@ -411,3 +468,13 @@ async function init() {
 }
 
 init();
+
+// Service Worker を登録し、PWA としてのインストール・オフライン動作を有効化する。
+// file:// で開いた場合は登録しない（SW は http/https でのみ動作する）。
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {
+      /* 登録失敗時もアプリはネットワーク経由で通常どおり動作する */
+    });
+  });
+}
