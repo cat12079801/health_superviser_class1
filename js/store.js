@@ -1,8 +1,30 @@
 // 学習状態の localStorage 読み書き
 const KEY = "eisei1.progress.v1";
 
+// 回答ごとの更新時刻の既定値。updatedAt を持たない旧データはこの十分古い時刻で
+// 補完する。問題単位マージで旧データがリモートの新しい回答へ不当に優先されるのを防ぐ。
+export const EPOCH = "1970-01-01T00:00:00.000Z";
+
 function emptyState() {
   return { answers: {}, updatedAt: null };
+}
+
+// 回答マップを現行スキーマへ正規化する純関数。
+// 各回答に updatedAt を保証し、欠損（旧スキーマ）は EPOCH で補完する。
+// localStorage に依存しないため単体テスト可能とする。
+export function migrateAnswers(answers) {
+  const out = {};
+  if (!answers || typeof answers !== "object") return out;
+  for (const [id, a] of Object.entries(answers)) {
+    if (!a || typeof a !== "object") continue;
+    out[id] = {
+      lastChoice: a.lastChoice,
+      correct: a.correct,
+      attempts: a.attempts || 0,
+      updatedAt: typeof a.updatedAt === "string" ? a.updatedAt : EPOCH,
+    };
+  }
+  return out;
 }
 
 export function load() {
@@ -11,7 +33,7 @@ export function load() {
     if (!raw) return emptyState();
     const data = JSON.parse(raw);
     if (!data || typeof data.answers !== "object") return emptyState();
-    return data;
+    return { answers: migrateAnswers(data.answers), updatedAt: data.updatedAt ?? null };
   } catch {
     return emptyState();
   }
@@ -34,6 +56,7 @@ export function record(id, choiceIndex, correct) {
     lastChoice: choiceIndex,
     correct,
     attempts: (prev?.attempts || 0) + 1,
+    updatedAt: new Date().toISOString(),
   };
   save(state);
 }
