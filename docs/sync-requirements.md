@@ -112,6 +112,11 @@ merged = {}
 
 - 主キーは `(user_id, question_id)` とし、回答ごとの upsert を可能にする。
 - **RLS を有効化し、`user_id = auth.uid()` の行のみ select / insert / update / delete を許可する**（必須）。
+- **`authenticated` ロールへのテーブル権限付与（GRANT）が必須**である。PostgreSQL は「テーブルへの GRANT」→「RLS ポリシー」の順で判定するため、GRANT が無いと RLS を見る前に `42501 permission denied for table` で拒否される（403）。プロジェクト作成時に「Automatically expose new tables」を OFF にした場合は自動付与されないため、次を明示的に実行する。未ログインはリモートへアクセスしないため `anon` には付与しない（最小権限）。
+
+```sql
+grant select, insert, update, delete on public.progress to authenticated;
+```
 
 ## 7. 非機能・運用要件
 
