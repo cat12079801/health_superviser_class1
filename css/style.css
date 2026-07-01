@@ -55,6 +55,12 @@ body {
   cursor: pointer;
 }
 .auth-btn:disabled { opacity: 0.5; cursor: default; }
+.sync-status {
+  width: 100%;
+  font-size: 0.72rem;
+  opacity: 0.9;
+}
+.sync-status.ng { color: #ffd5d0; }
 
 #app {
   max-width: 720px;
