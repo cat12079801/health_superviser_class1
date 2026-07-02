@@ -4,7 +4,7 @@
 
 ## プロジェクト概要
 
-第一種衛生管理者試験の学習を行う一問一答 Web アプリである。第一弾として関係法令科目のみを対象とする。バックエンドを持たず、素の HTML / CSS / JS と JSON データだけで完結する静的サイトとして構成する。デプロイ先は GitHub Pages を想定する。詳細は [REQUIREMENTS.md](REQUIREMENTS.md) に記載する。
+第一種衛生管理者試験の学習を行う一問一答 Web アプリである。関係法令・労働衛生・労働生理の全5カテゴリを対象とする。素の HTML / CSS / JS と JSON データだけで完結する静的サイトとして構成し、GitHub Pages へデプロイする。任意機能として、Google ログイン時のみ Supabase に進捗を保存し端末間で同期する。詳細は [REQUIREMENTS.md](REQUIREMENTS.md) に記載する。
 
 ## 開発フロー
 
@@ -21,7 +21,7 @@
 
 ## 問題データ
 
-- 問題は `data/` 配下のカテゴリ別ファイル（1ファイル＝1カテゴリ。ファイル名は `category` の値に一致させる。例: `data/law_hazardous.json`）に分割して管理し、読み込むファイルを `data/index.json` のマニフェストに列挙する。スキーマとファイル構成は [README.md](README.md) に記載する。
+- 問題は `data/` 配下のカテゴリ別ファイル（1ファイル＝1カテゴリ。ファイル名は `category` の値に一致させる。例: `data/law_hazardous.json`）に分割して管理し、読み込むファイルを `data/categories.json` のマニフェストに列挙する。スキーマとファイル構成は [README.md](README.md) に記載する。
 - `category` / `id` / `tags` の命名規則と全5科目への拡張方針は [docs/categories.md](docs/categories.md) に定める。新しい科目・カテゴリを追加するときはこれに従う。
 - 各問題の `id` は学習履歴（localStorage）と紐づくため、既存の `id` は変更しない。
 - 問題・解説は法令等を一次情報として作成したオリジナルとし、市販問題集の文面を転載しない。
