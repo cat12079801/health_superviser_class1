@@ -38,6 +38,18 @@ function assert(cond, msg) {
   assert(out["x"].attempts === 0, "attempts 欠損は 0 に補完される");
 }
 
+// updatedAt は正規形（ミリ秒3桁 + Z）へ揃える
+{
+  const out = migrateAnswers({
+    x: { lastChoice: 0, correct: true, attempts: 1, updatedAt: "2026-07-01T09:00:00.123456+00:00" },
+  });
+  assert(out.x.updatedAt === "2026-07-01T09:00:00.123Z", "+00:00 形式はミリ秒3桁 + Z へ正規化される");
+  const out2 = migrateAnswers({
+    y: { lastChoice: 0, correct: true, attempts: 1, updatedAt: "not-a-date" },
+  });
+  assert(out2.y.updatedAt === EPOCH, "日時として解釈できない updatedAt は EPOCH へフォールバックする");
+}
+
 // 不正な入力は空オブジェクトを返す / 不正な要素は除外する
 {
   assert(Object.keys(migrateAnswers(null)).length === 0, "null は空を返す");

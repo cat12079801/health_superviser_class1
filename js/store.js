@@ -46,6 +46,16 @@ function emptyState() {
   return { answers: {}, updatedAt: null };
 }
 
+// updatedAt を「ミリ秒3桁 + Z」の ISO 8601 形式へ正規化する。
+// ローカル（toISOString の "...123Z"）とリモート（PostgREST の "...123456+00:00"）で
+// 文字列形式が異なると辞書順比較が時系列比較と一致しないため、取り込み時に揃える。
+// 文字列でない・日時として解釈できない値は EPOCH へフォールバックする。
+function normalizeUpdatedAt(value) {
+  if (typeof value !== "string") return EPOCH;
+  const t = new Date(value).getTime();
+  return Number.isNaN(t) ? EPOCH : new Date(t).toISOString();
+}
+
 // 回答マップを現行スキーマへ正規化する純関数。
 // 各回答に updatedAt を保証し、欠損（旧スキーマ）は EPOCH で補完する。
 // localStorage に依存しないため単体テスト可能とする。
@@ -58,7 +68,7 @@ export function migrateAnswers(answers) {
       lastChoice: a.lastChoice,
       correct: a.correct,
       attempts: a.attempts || 0,
-      updatedAt: typeof a.updatedAt === "string" ? a.updatedAt : EPOCH,
+      updatedAt: normalizeUpdatedAt(a.updatedAt),
     };
   }
   return out;
@@ -68,7 +78,8 @@ export function migrateAnswers(answers) {
 // 片方にしか存在しない id はそれを採用し、両方に存在する id は updatedAt が
 // 新しい方を採用する。これにより端末ごとに別々の問題を解いた場合でも双方の
 // 更新が残り、全体上書き（LWW）による消失を防ぐ。
-// - updatedAt は ISO 8601 UTC 文字列のため、辞書順比較が時系列比較に一致する。
+// - updatedAt は migrateAnswers で同一形式（ミリ秒3桁 + Z）へ正規化されるため、
+//   辞書順比較が時系列比較に一致する。
 // - attempts は合算せず、採用した側（勝者）の値をそのまま用いる。
 // - updatedAt が同時刻のときは第 1 引数側を優先する。
 // 両引数は migrateAnswers で正規化するため、欠損は EPOCH として扱われる。

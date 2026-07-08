@@ -64,6 +64,19 @@ const T2 = "2026-07-01T10:00:00.000Z";
   assert(out2.q1.updatedAt === EPOCH, "片側のみの欠損データは EPOCH で補完される");
 }
 
+// タイムスタンプの文字列形式が混在しても時系列で比較される。
+// PostgREST は timestamptz を "...+00:00"（マイクロ秒・末尾ゼロ省略）形式で返すため、
+// ローカルの toISOString（"...Z" ミリ秒3桁）と単純な辞書順比較では一致しない。
+{
+  // 辞書順では ".1Z" > ".12+00:00" だが、時系列では 100ms < 120ms でリモートが新しい
+  const out = mergeAnswers(
+    { q1: A(0, false, 1, "2026-07-01T09:00:00.1Z") },
+    { q1: A(3, true, 1, "2026-07-01T09:00:00.12+00:00") }
+  );
+  assert(out.q1.lastChoice === 3, "形式が混在しても時系列で新しい方が勝つ");
+  assert(out.q1.updatedAt === "2026-07-01T09:00:00.120Z", "採用された updatedAt は正規形へ揃う");
+}
+
 // 同時刻は第 1 引数を優先する
 {
   const out = mergeAnswers({ q1: A(0, true, 1, T1) }, { q1: A(4, false, 1, T1) });
