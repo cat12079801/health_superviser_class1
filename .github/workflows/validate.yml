@@ -15,3 +15,7 @@ jobs:
           node-version: "20"
       - name: 問題データを検証
         run: node scripts/validate-questions.mjs
+      - name: 単体テストを実行
+        run: |
+          node scripts/test-merge-answers.mjs
+          node scripts/test-store-migration.mjs
