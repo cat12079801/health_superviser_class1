@@ -7,6 +7,8 @@ import {
   getAnswers,
   replaceAnswers,
   mergeAnswers,
+  loadFilter,
+  saveFilter,
   DIFFICULTIES,
   DIFFICULTY_LABEL,
 } from "./store.js";
@@ -97,6 +99,19 @@ function getFilter() {
     includeUnanswered: $("#tg-unanswered").checked,
     includeWrong: $("#tg-wrong").checked,
   };
+}
+
+// 保存済みのフィルタ選択状態をトグルへ復元する。保存が無い端末は既定（両方 ON）とする。
+function restoreFilter() {
+  const f = loadFilter();
+  $("#tg-unanswered").checked = f.includeUnanswered;
+  $("#tg-wrong").checked = f.includeWrong;
+}
+
+// トグル変更時、選択状態を端末へ保存したうえで対象問題数の表示を更新する。
+function onFilterChange() {
+  saveFilter(getFilter());
+  renderCounts();
 }
 
 // トグルの選択に応じて、各出題ボタンの対象問題数を表示し、0問のボタンを非活性にする
@@ -290,8 +305,8 @@ function bind() {
     if (!btn || btn.disabled) return;
     startQuiz(btn.dataset.mode, btn.dataset.category);
   });
-  $("#tg-unanswered").addEventListener("change", renderCounts);
-  $("#tg-wrong").addEventListener("change", renderCounts);
+  $("#tg-unanswered").addEventListener("change", onFilterChange);
+  $("#tg-wrong").addEventListener("change", onFilterChange);
   $("#to-stats").addEventListener("click", renderStats);
   $("#refresh-data").addEventListener("click", refreshData);
   $("#quiz-back").addEventListener("click", renderHome);
@@ -461,6 +476,7 @@ async function init() {
   );
   renderCategoryMenu();
   bind(); // カテゴリ別ボタン生成後に bind し、生成ボタンにも click を付与する
+  restoreFilter(); // renderHome の前にトグルを復元し、問題数表示を復元状態と一致させる
   renderHome();
   // 認証を初期化する。未設定・失敗時は onAuthChange(null) が呼ばれ、
   // 同期 UI は隠れたままローカルのみで動作する。
