@@ -13,8 +13,9 @@
 const CACHE_VERSION = "v1";
 const CACHE = `hsc-${CACHE_VERSION}`;
 
-// インストール時に先読みするアプリシェルと初期データ。
-// これらが揃えば初回オフラインでも学習を開始できる。
+// インストール時に先読みするアプリシェル。
+// 問題データの一覧はここに列挙せず、data/categories.json（単一の定義元）から
+// 動的に導出する。これらが揃えば初回オフラインでも学習を開始できる。
 const PRECACHE = [
   ".",
   "index.html",
@@ -28,12 +29,6 @@ const PRECACHE = [
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/icon-maskable-512.png",
-  "data/categories.json",
-  "data/law_general.json",
-  "data/law_hazardous.json",
-  "data/hygiene_general.json",
-  "data/hygiene_hazardous.json",
-  "data/physiology.json",
 ];
 
 // クエリを除いた URL を保存キーとして使う。
@@ -43,13 +38,31 @@ function cacheKey(request) {
   return url.toString();
 }
 
+// data/categories.json を取得して先読みし、implemented なカテゴリの
+// データファイルのパス一覧を返す。取得失敗時は空配列を返して先読みをスキップする
+// （その場合もランタイムキャッシュ（fetch ハンドラ）で順次補完される）。
+async function precacheDataPaths(cache) {
+  const manifestPath = "data/categories.json";
+  try {
+    const res = await fetch(manifestPath, { cache: "reload" });
+    if (!res.ok) return [];
+    await cache.put(cacheKey(new Request(manifestPath)), res.clone());
+    const manifest = await res.json();
+    const categories = Array.isArray(manifest.categories) ? manifest.categories : [];
+    return categories.filter((c) => c && c.implemented).map((c) => `data/${c.file}`);
+  } catch {
+    return [];
+  }
+}
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE);
+      const dataPaths = await precacheDataPaths(cache);
       // 一部の先読みが失敗してもインストール自体は成功させる（堅牢性のため）。
       await Promise.allSettled(
-        PRECACHE.map(async (path) => {
+        [...PRECACHE, ...dataPaths].map(async (path) => {
           try {
             const res = await fetch(path, { cache: "reload" });
             if (res.ok) await cache.put(cacheKey(new Request(path)), res.clone());
