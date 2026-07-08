@@ -1,6 +1,43 @@
 // 学習状態の localStorage 読み書き
 const KEY = "eisei1.progress.v1";
 
+// 出題フィルタ（未回答 / 誤答トグル）の選択状態を保存する端末固有キー。
+// 学習進捗（KEY）とは分離し、Supabase 同期の対象外として端末ごとに独立させる。
+const FILTER_KEY = "eisei1.ui.filter.v1";
+
+// フィルタの既定値。保存値が無い/壊れている端末では両方 ON とする。
+function defaultFilter() {
+  return { includeUnanswered: true, includeWrong: true };
+}
+
+// 保存済みのフィルタ選択状態を返す。欠損・不正時は既定値へフォールバックする。
+export function loadFilter() {
+  try {
+    const raw = localStorage.getItem(FILTER_KEY);
+    if (!raw) return defaultFilter();
+    const data = JSON.parse(raw);
+    if (!data || typeof data !== "object") return defaultFilter();
+    return {
+      includeUnanswered: typeof data.includeUnanswered === "boolean" ? data.includeUnanswered : true,
+      includeWrong: typeof data.includeWrong === "boolean" ? data.includeWrong : true,
+    };
+  } catch {
+    return defaultFilter();
+  }
+}
+
+// フィルタの選択状態を保存する。
+export function saveFilter(filter) {
+  try {
+    localStorage.setItem(FILTER_KEY, JSON.stringify({
+      includeUnanswered: !!filter.includeUnanswered,
+      includeWrong: !!filter.includeWrong,
+    }));
+  } catch {
+    /* 保存失敗時は無視（プライベートモード等） */
+  }
+}
+
 // 回答ごとの更新時刻の既定値。updatedAt を持たない旧データはこの十分古い時刻で
 // 補完する。問題単位マージで旧データがリモートの新しい回答へ不当に優先されるのを防ぐ。
 export const EPOCH = "1970-01-01T00:00:00.000Z";
