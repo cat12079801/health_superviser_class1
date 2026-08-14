@@ -39,6 +39,17 @@ node scripts/validate-questions.mjs
 
 JSON のパース、必須フィールド、`answerIndex` の範囲、選択肢が5つか、`id` の一意性、`category` とファイル名の一致、`difficulty` の列挙値、`columns` の構造などを検査する。エラーがあれば終了コード 1 で失敗する。この検証は GitHub Actions（`.github/workflows/validate.yml`）で Pull Request と `main` への push のたびに自動実行する。
 
+## 問題の文量の計測
+
+問題文・選択肢の文字数を計測するスクリプトも用意している。本番（安全衛生技術試験協会の公表問題）の実測値の1.15倍を目安とし、その達成状況を表示する。基準の考え方は [CLAUDE.md](CLAUDE.md) の「難易度 > 文量」に定める。
+
+```sh
+node scripts/measure-length.mjs                                        # 全問の集計を表示する
+node scripts/measure-length.mjs --category physiology --last 50 --check # 末尾50問を判定する
+```
+
+引数なしでは集計を表示するだけで終了コードは 0 とする。`--check` を付けたときだけ下限判定を行い、下回れば終了コード 1 で失敗する。文量の基準は新規に作成する問題にのみ適用し既存問題へ遡及しないため、この計測は自動実行の対象に含めず、問題を追加する Pull Request で追加分を `--last` に絞って手動で確認する。
+
 ## デプロイ（GitHub Pages）
 
 1. このリポジトリを push。
