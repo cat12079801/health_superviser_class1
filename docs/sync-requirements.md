@@ -18,7 +18,7 @@
 | 未ログイン利用 | 従来どおり利用可。ログイン時に既存の localStorage 進捗をアカウントへ初回マージする |
 | 既存 localStorage 進捗の時刻欠損 | 十分古い時刻で補完する |
 | 保存形式 | 1回答1行（`user_id × question_id`） |
-| 運用方針 | 無料枠の自動停止を許容する（停止してもデータは保持されるため、利用時に復帰操作を行う） |
+| 運用方針 | 無料枠の自動停止を避けるため、GitHub Actions から非個人データの専用ヘルスチェック用テーブルを低頻度で読み取る。停止防止は保証せず、停止時は管理画面から復帰する |
 
 ## 3. 基盤（Supabase）
 
@@ -31,9 +31,30 @@ Supabase はオープンソースの BaaS であり、認証・PostgreSQL・自�
 
 ### 3.1 コストと運用
 
-- 無料枠（DB 500MB / 認証 月間アクティブ 5万人 / 帯域 5GB）で開始する。本用途のデータ量では容量に十分な余裕がある。
-- 無料枠では 7 日間アクセスがないとプロジェクトが一時停止する。**一時停止でもデータは消えず保持される**。停止した場合は管理画面から復帰操作を行う。
-- 個人学習用途では停止を許容する方針とする。keep-alive や Pro プラン（月 $25）への移行は、運用して不満が生じた時点で再検討する。
+- 無料枠で開始し、有料プランへの変更は本要件に含めない。
+- Supabase の Free Plan は、直近の利用状況が少ないプロジェクトを自動停止する場合がある。停止判定は単純な「7日間に1回アクセスすれば必ず回避できる」という保証ではなく、ユーザーDBアクティビティを含む利用状況に基づく。
+- 自動停止を避ける補助策として、GitHub Actions から1日数回、Supabase の DB に到達する読み取りリクエストを送る。
+- 定期アクセスによって自動停止を確実に防止できるとは扱わない。停止した場合は Supabase Dashboard から復帰する。
+- 公開 GitHub リポジトリでは、リポジトリに60日間アクティビティがない場合、schedule を持つ workflow 自体が GitHub により自動無効化される。このため GitHub Actions の定期実行も永続的な稼働を保証しない。
+
+### 3.2 定期読み取り用ヘルスチェック
+
+`progress` は個人の学習履歴を保持するため、未ログインの `anon` ロールには公開しない。keep-alive のために `progress` の RLS や GRANT を緩和してはならない。
+
+代わりに、個人データを一切保持しない `public.health_check` テーブルを1行だけ用意し、`anon` には `select` のみを許可する。セットアップSQLは [supabase-keepalive.sql](supabase-keepalive.sql) に置く。
+
+GitHub Actions は既存の `js/config.js` にある Project URL と publishable key を利用し、`GET /rest/v1/health_check?select=id&limit=1` を読み取る。
+
+publishable key の未ログインアクセスは `anon` として評価されるため、`health_check` 以外のテーブル権限には影響しない。`service_role` / secret key は RLS を迂回するため、この用途では使用しない。
+
+workflow は `.github/workflows/supabase-keepalive.yml` とし、次の方針とする。
+
+- `schedule` は UTC 00:17 / 08:17 / 16:17 の1日3回とする。
+- `workflow_dispatch` を併設し、手動で疎通確認できるようにする。
+- HTTP 4xx / 5xx は失敗とする。401・403を成功扱いしない。
+- 1リクエストのタイムアウトは10秒、再試行は最大2回に限定する。
+- 応答本文は捨て、学習データや認証情報をログへ出力しない。
+- workflow の job timeout は2分とする。
 
 ## 4. 同期の仕組み（問題単位マージ）
 
@@ -136,5 +157,5 @@ grant select, insert, update, delete on public.progress to authenticated;
 ## 9. スコープ外
 
 - Google 以外のログイン手段（メール＋パスワード、マジックリンク等）。
-- keep-alive による自動停止回避および Pro プランでの常時稼働。
+- Pro プランでの常時稼働。
 - 進捗以外のデータ（設定・お気に入り等）の同期。
