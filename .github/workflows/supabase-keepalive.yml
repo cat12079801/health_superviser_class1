@@ -1,0 +1,41 @@
+name: Supabase keep-alive
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC 00:17 / 08:17 / 16:17. Avoids the top of the hour, when scheduled
+    # workflows are more likely to be delayed under GitHub Actions load.
+    - cron: "17 0,8,16 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supabase-keep-alive
+  cancel-in-progress: false
+
+jobs:
+  read-health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Supabase の DB を読み取り確認
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SUPABASE_URL="$(
+            sed -n 's/^export const SUPABASE_URL = "\(.*\)";$/\1/p' js/config.js
+          )"
+          SUPABASE_PUBLISHABLE_KEY="$(
+            sed -n 's/^export const SUPABASE_PUBLISHABLE_KEY = "\(.*\)";$/\1/p' js/config.js
+          )"
+
+          if [[ -z "$SUPABASE_URL" || -z "$SUPABASE_PUBLISHABLE_KEY" ]]; then
+            echo "Supabase connection settings are missing." >&2
+            exit 1
+          fi
+
+          curl             --silent             --show-error             --fail             --output /dev/null             --max-time 10             --retry 2             --retry-delay 2             --retry-all-errors             --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}"             --header "Accept: application/json"             "${SUPABASE_URL}/rest/v1/health_check?select=id&limit=1"
