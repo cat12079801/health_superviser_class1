@@ -1,0 +1,51 @@
+name: Monthly repository activity
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every month on the 1st at 03:23 UTC (not at the top of the hour).
+    - cron: "23 3 1 * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-repository-activity
+  cancel-in-progress: false
+
+jobs:
+  empty-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Commit repository activity without changing files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Avoid overwriting concurrent changes. A non-fast-forward push
+          # is retried from the latest remote tip, never forced.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+
+            git -c user.name="github-actions[bot]" \
+                -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                commit --allow-empty -m "chore: monthly repository activity"
+
+            if git push origin HEAD:refs/heads/main; then
+              echo "Monthly empty commit pushed."
+              exit 0
+            fi
+
+            echo "Push failed (attempt ${attempt}/3); retrying." >&2
+            sleep 2
+          done
+
+          echo "Unable to push a monthly empty commit." >&2
+          exit 1
