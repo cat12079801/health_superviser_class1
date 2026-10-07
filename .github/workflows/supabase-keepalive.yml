@@ -38,4 +38,25 @@ jobs:
             exit 1
           fi
 
-          curl             --silent             --show-error             --fail             --output /dev/null             --max-time 10             --retry 2             --retry-delay 2             --retry-all-errors             --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}"             --header "Accept: application/json"             "${SUPABASE_URL}/rest/v1/rpc/keepalive_ping"
+          RESPONSE_FILE="$(mktemp)"
+          trap 'rm -f "$RESPONSE_FILE"' EXIT
+
+          curl \
+            --silent \
+            --show-error \
+            --fail \
+            --output "$RESPONSE_FILE" \
+            --max-time 10 \
+            --retry 2 \
+            --retry-delay 2 \
+            --retry-all-errors \
+            --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}" \
+            --header "Accept: application/json" \
+            "${SUPABASE_URL}/rest/v1/rpc/keepalive_ping"
+
+          if [[ "$(cat "$RESPONSE_FILE")" != "true" ]]; then
+            echo "Supabase health RPC returned an unexpected response." >&2
+            exit 1
+          fi
+
+          echo "Supabase health RPC succeeded."
