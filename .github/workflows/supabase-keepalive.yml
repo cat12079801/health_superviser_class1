@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  read-health-check:
+  read-progress:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
@@ -38,4 +38,4 @@ jobs:
             exit 1
           fi
 
-          curl             --silent             --show-error             --fail             --output /dev/null             --max-time 10             --retry 2             --retry-delay 2             --retry-all-errors             --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}"             --header "Accept: application/json"             "${SUPABASE_URL}/rest/v1/health_check?select=id&limit=1"
+          curl             --silent             --show-error             --fail             --output /dev/null             --max-time 10             --retry 2             --retry-delay 2             --retry-all-errors             --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}"             --header "Accept: application/json"             "${SUPABASE_URL}/rest/v1/progress?select=question_id&limit=1"
