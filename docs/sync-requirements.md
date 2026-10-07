@@ -18,7 +18,7 @@
 | 未ログイン利用 | 従来どおり利用可。ログイン時に既存の localStorage 進捗をアカウントへ初回マージする |
 | 既存 localStorage 進捗の時刻欠損 | 十分古い時刻で補完する |
 | 保存形式 | 1回答1行（`user_id × question_id`） |
-| 運用方針 | 無料枠の自動停止を避けるため、GitHub Actions から非個人データの専用ヘルスチェック用テーブルを低頻度で読み取る。停止防止は保証せず、停止時は管理画面から復帰する |
+| 運用方針 | GitHub Actions から既存の `progress` テーブルへ低頻度の読み取りを試みる。認証・RLS により失敗し得るため、成功を確認できるまでは停止防止策として成立したと扱わない |
 
 ## 3. 基盤（Supabase）
 
@@ -37,23 +37,21 @@ Supabase はオープンソースの BaaS であり、認証・PostgreSQL・自�
 - 定期アクセスによって自動停止を確実に防止できるとは扱わない。停止した場合は Supabase Dashboard から復帰する。
 - 公開 GitHub リポジトリでは、リポジトリに60日間アクティビティがない場合、schedule を持つ workflow 自体が GitHub により自動無効化される。このため GitHub Actions の定期実行も永続的な稼働を保証しない。
 
-### 3.2 定期読み取り用ヘルスチェック
+### 3.2 既存テーブルへの定期読み取り
 
-`progress` は個人の学習履歴を保持するため、未ログインの `anon` ロールには公開しない。keep-alive のために `progress` の RLS や GRANT を緩和してはならない。
+`progress` は個人の学習履歴を保持する。既存の `authenticated` 専用アクセスと RLS は変更しない。`anon` へ権限を付与しない。
 
-代わりに、個人データを一切保持しない `public.health_check` テーブルを1行だけ用意し、`anon` には `select` のみを許可する。セットアップSQLは [supabase-keepalive.sql](supabase-keepalive.sql) に置く。
+GitHub Actions は既存の `js/config.js` の Project URL と publishable key を使い、`GET /rest/v1/progress?select=question_id&limit=1` を実行する。応答本文は破棄するため学習履歴をログに記録しない。書き込み・削除は行わない。
 
-GitHub Actions は既存の `js/config.js` にある Project URL と publishable key を利用し、`GET /rest/v1/health_check?select=id&limit=1` を読み取る。
-
-publishable key の未ログインアクセスは `anon` として評価されるため、`health_check` 以外のテーブル権限には影響しない。`service_role` / secret key は RLS を迂回するため、この用途では使用しない。
+**制約:** 未ログインで publishable key のみを利用するリクエストは `anon` として処理される。`progress` は `authenticated` 専用なので、403（環境によっては401など）を返す可能性が高い。これらは workflow の失敗として扱い、DB読み取りが成功したとも、自動停止対策が成立したとも判断しない。既存権限で成功できなければ、認証情報の追加または別の公開可能な読み取り経路が必要であり、変更前に確認する。
 
 workflow は `.github/workflows/supabase-keepalive.yml` とし、次の方針とする。
 
 - `schedule` は UTC 00:17 / 08:17 / 16:17 の1日3回とする。
-- `workflow_dispatch` を併設し、手動で疎通確認できるようにする。
-- HTTP 4xx / 5xx は失敗とする。401・403を成功扱いしない。
+- `workflow_dispatch` を併設して手動で疎通確認できるようにする。
+- HTTP 4xx / 5xx は失敗とし、401・403を成功扱いしない。
 - 1リクエストのタイムアウトは10秒、再試行は最大2回に限定する。
-- 応答本文は捨て、学習データや認証情報をログへ出力しない。
+- 応答本文は破棄し、学習データ・認証情報をログへ出さない。
 - workflow の job timeout は2分とする。
 
 ## 4. 同期の仕組み（問題単位マージ）
