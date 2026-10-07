@@ -36,6 +36,10 @@ Supabase はオープンソースの BaaS であり、認証・PostgreSQL・自�
 - 自動停止を避ける補助策として、GitHub Actions から1日数回、Supabase の DB に到達する読み取りリクエストを送る。
 - 定期アクセスによって自動停止を確実に防止できるとは扱わない。停止した場合は Supabase Dashboard から復帰する。
 - 公開 GitHub リポジトリでは、リポジトリに60日間アクティビティがない場合、schedule を持つ workflow 自体が GitHub により自動無効化される。このため GitHub Actions の定期実行も永続的な稼働を保証しない。
+- 無活動による schedule の無効化を避ける補助策として、`.github/workflows/monthly-repository-activity.yml` が毎月1日 03:23 UTCに `main` へ空コミットを push する。これはファイル内容を変更しないが、履歴にはコミットが1件追加される。
+- 上記の空コミットは最小権限の `GITHUB_TOKEN`（`contents: write`）を使用し、別途 PAT は必要としない。GitHub公式の仕様上、`GITHUB_TOKEN` による push は他の `push` workflow や GitHub Pages のビルドを起動しない。
+- GitHubの公式仕様は60日間の「リポジトリアクティビティ」の具体的な判定条件として、Actions bot による空コミットを必ず計上するとは明記していない。したがって**この対策でも停止回避を保証しない**。また、スケジュールが無効になった後はこの workflow 自体も動けない。
+- `main` へのbotの直接pushをブランチ保護やリポジトリ設定が拒否する場合、空コミットは失敗する。GitHub Actions の実行結果を確認し、必要なら設定変更の要否を検討する。保護ルールを迂回するための権限追加は行わない。
 
 ### 3.2 読み取り専用RPCによる定期アクセス
 
